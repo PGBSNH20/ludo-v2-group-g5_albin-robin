@@ -16,7 +16,8 @@ namespace LudoEngine.DbModel
         protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
         {
             DatabaseManagement.ReadConnectionString(@"DbModel/connection.txt");
-            optionsbuilder.UseSqlServer(DatabaseManagement.ConnectionString);
+       //optionsbuilder.UseSqlServer(DatabaseManagement.ConnectionString);
+            
 
         }
 
