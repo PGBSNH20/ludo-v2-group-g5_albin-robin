@@ -32,7 +32,10 @@ namespace Ludo_Web.MVC.SMTP
                 .Replace("ACCOUNTID", accountId)
                 .Replace("INVITEDTITLE", Dict.Email_Title)
                 .Replace("SUBTITLE", Dict.Email_Subtitle)
-                .Replace("JOINGAMEURI", gameUrl);
+                .Replace("JOINGAMEURI", gameUrl)
+                .Replace("IMGURL", Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
+                                   "/SMTP/Resources/email_ludo_game_grey.jpg");
+            //Above path will need to be updated.
             File.WriteAllText(@"C:\Users\Albin\Desktop\test.html", doc);
             return doc;
         }
