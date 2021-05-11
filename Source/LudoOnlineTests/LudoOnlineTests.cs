@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Ludo_Web.DataAccess;
 using Ludo_Web.MVC.Models;
+using static Ludo_Web.MVC.Models.PropertyEnums;
 
 namespace LudoOnlineTests
 {
@@ -27,22 +28,22 @@ namespace LudoOnlineTests
             _repository = new DbRepository(fakeHost.InMemoryContext);
         }
         [Fact]
-        public void GetPersonFromDb_ExpectCorrectEnum()
+        public void GetPlayerFromDb_ExpectCorrectEnum()
         {
             var player1 = new Player()
             {
                 EmailAdress = "ace@ventura.com",
-                Language = PropertyEnums.Language.en_US,
+                Language = Language.en_US,
                 PlayerName = "Ace_Mighty",
                 Password = "animalDicks",
-                PlayerType = PropertyEnums.PlayerType.Professional
+                PlayerType = PlayerType.Professional
             };
             _repository.Add(player1);
             _repository.SaveChanges();
              var playerBack = _repository.Players.First();
 
-            Assert.Equal(PropertyEnums.PlayerType.Professional, playerBack.PlayerType);
-            Assert.Equal(PropertyEnums.Language.en_US, playerBack.Language);
+            Assert.Equal(PlayerType.Professional, playerBack.PlayerType);
+            Assert.Equal(Language.en_US, playerBack.Language);
         }
     }
 }
