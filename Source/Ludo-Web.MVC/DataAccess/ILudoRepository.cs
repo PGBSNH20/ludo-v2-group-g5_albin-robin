@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ludo_Web.DataAccess
 {
-    interface ILudoRepository
+    public interface ILudoRepository
     {
         IQueryable<Player> Players { get; }
         IQueryable<Game> Games { get; }

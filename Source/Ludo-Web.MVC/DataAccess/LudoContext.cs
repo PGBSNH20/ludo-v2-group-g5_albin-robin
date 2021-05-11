@@ -28,7 +28,11 @@ namespace Ludo_Web.DataAccess
             modelBuilder.Entity<Player>()
                 .Property(p => p.PlayerType)
                 .HasConversion(x => x.ToString(), x => (PlayerType)Enum.Parse(typeof(PlayerType), x));
-            
+
+            modelBuilder.Entity<Player>()
+               .Property(p => p.Language)
+               .HasConversion(x => x.ToString(), x => (Language)Enum.Parse(typeof(Language), x));
+
             modelBuilder.Entity<GameState>()
                .Property(p => p.TeamColor)
                .HasConversion(x => x.ToString(), x => (TeamColor)Enum.Parse(typeof(TeamColor), x));
