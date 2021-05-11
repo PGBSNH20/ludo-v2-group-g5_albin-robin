@@ -27,4 +27,17 @@
     <ProjectReference Include="..\LudoEngine\LudoEngine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Translations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Models\Translations\Resources\en_US.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\Translations\Resources\sv_SE.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
