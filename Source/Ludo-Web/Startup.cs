@@ -30,10 +30,11 @@ namespace Ludo_Web
 
             services.AddControllersWithViews();
 
-            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt"))
-                services.AddDbContext<LudoContext>(options => options.UseSqlServer(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt")));
-            else
-                services.AddDbContext<LudoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+            services.AddTransient<ILudoRepository, DbRepository>();
+            //if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt"))
+            //    services.AddDbContext<LudoContext>(options => options.UseSqlServer(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt")));
+            //else
+            services.AddDbContext<LudoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
 
             services.AddAuthentication(options =>
             {

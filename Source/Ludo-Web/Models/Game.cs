@@ -8,12 +8,12 @@ namespace Ludo_Web.Models
 {
     public record Game
     {
-        public int Id { get;}
-        public string GuidID { get; }
-        public Player CurrentPlayer { get; set; }
-        public IEnumerable<Player> Players { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        [Key]
+        public int Id { get; set; }
+        [Required]
+        public string URL { get; set; }
+        public DateTime? StartTime { get; set; }
+        public DateTime? EndTime { get; set; }
         public string GameStatus { get; set; }
     }
 }
