@@ -19,11 +19,11 @@ namespace Ludo_Web.MVC.SMTP
                 EnableSsl = true,
             };
             
-            var body = GenerateBody("Insert game ID", "Insert account ID");
+            var body = GenerateBody("Insert game ID", "Insert account ID", "Insert game URL");
             var subject = "Insert account id " + Dict.Email_Subject;
             smtpClient.Send("Insert our ludo email", recipient, subject, body);
         }
-        public static string GenerateBody(string gameId, string accountId)
+        public static string GenerateBody(string gameId, string accountId, string gameUrl)
         {
             var doc = File.ReadAllText(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
                              "/SMTP/Resources/emailbody_raw.html");
@@ -31,7 +31,8 @@ namespace Ludo_Web.MVC.SMTP
                 .Replace("GAMEID", gameId)
                 .Replace("ACCOUNTID", accountId)
                 .Replace("INVITEDTITLE", Dict.Email_Title)
-                .Replace("SUBTITLE", Dict.Email_Subtitle);
+                .Replace("SUBTITLE", Dict.Email_Subtitle)
+                .Replace("JOINGAMEURI", gameUrl);
             File.WriteAllText(@"C:\Users\Albin\Desktop\test.html", doc);
             return doc;
         }
