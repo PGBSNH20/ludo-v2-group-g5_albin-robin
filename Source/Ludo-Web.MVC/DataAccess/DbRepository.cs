@@ -14,6 +14,7 @@ namespace Ludo_Web.DataAccess
         public IQueryable<Game> Games => _db.Games;
         public IQueryable<UserToken> UserTokens => _db.UserTokens;
         public IQueryable<GameState> GameStates => _db.GameStates;
+        public IQueryable<GamePosition> GamePositions => _db.GamePositions;
         public void Add<TEntityType>(TEntityType entity) => _db.Add(entity);
         public void Remove<TEntityType>(TEntityType entity) => _db.Remove(entity);
         public void SaveChanges() => _db.SaveChanges();

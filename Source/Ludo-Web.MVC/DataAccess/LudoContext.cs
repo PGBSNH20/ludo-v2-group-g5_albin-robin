@@ -20,6 +20,7 @@ namespace Ludo_Web.DataAccess
         public DbSet<Game> Games { get; set; }
         public DbSet<GameState> GameStates { get; set; }
         public DbSet<UserToken> UserTokens { get; set; }
+        public DbSet<GamePosition> GamePositions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GameState>()
