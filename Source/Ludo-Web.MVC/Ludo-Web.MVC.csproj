@@ -38,6 +38,9 @@
     <None Update="Models\Translations\Resources\sv_SE.lang">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="SMTP\Resources\emailbody_raw.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
