@@ -1,14 +1,6 @@
 using Ludo_Web.MVC.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading;
-using System.Threading.Tasks;
 using static Ludo_Web.MVC.Models.PropertyEnums;
 
 namespace Ludo_Web.DataAccess
@@ -27,6 +19,8 @@ namespace Ludo_Web.DataAccess
                 .HasKey(o => new { o.GameId, o.PlayerId }); //Composite key => only same player once in every game.
             modelBuilder.Entity<GameState>()
                 .HasAlternateKey(o => new { o.TeamColor, o.GameId }); //Unique constraint color and game => no duplicate colors.
+            modelBuilder.Entity<GameState>()
+                .HasAlternateKey(o => new { o.EndResult, o.GameId, });
 
             modelBuilder.Entity<Player>()
                 .HasAlternateKey(o => new { o.EmailAdress });
@@ -40,8 +34,8 @@ namespace Ludo_Web.DataAccess
                .HasConversion(x => x.ToString(), x => (TeamColor)Enum.Parse(typeof(TeamColor), x));
             
             modelBuilder.Entity<GameState>()
-               .Property(p => p.EndPosition)
-               .HasConversion(x => x.ToString(), x => (EndPosition)Enum.Parse(typeof(EndPosition), x));
+               .Property(p => p.EndResult)
+               .HasConversion(x => (int)x, x => (EndResult)x);
 
             modelBuilder.Entity<Game>()
                 .Property(p => p.GameStatus)

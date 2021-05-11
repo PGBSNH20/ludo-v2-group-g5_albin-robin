@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Ludo_Web.MVC.Models
+﻿namespace Ludo_Web.MVC.Models
 {
     //https://docs.microsoft.com/en-us/ef/core/modeling/value-conversions?tabs=data-annotations //ValueConversion
     //https://www.entityframeworktutorial.net/EntityFramework5/enum-in-entity-framework5.aspx //Enumsettings in SSM
@@ -16,12 +11,12 @@ namespace Ludo_Web.MVC.Models
             Green,
             Red
         }
-        public enum EndPosition
+        public enum EndResult
         {
-            First,
-            Second,
-            Third,
-            Fourth
+            First = 1,
+            Second = 2,
+            Third = 3,
+            Fourth = 4
         }
         public enum GameStatus
         {
