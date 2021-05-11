@@ -29,10 +29,4 @@
       </Reference>
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="DbModel\connection.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

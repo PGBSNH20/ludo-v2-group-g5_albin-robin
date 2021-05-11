@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoEngine", "LudoEngine\Lu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePark-API", "SpacePark-API\SpacePark-API.csproj", "{E93EC837-B365-4338-89BE-0DED0F4F7F08}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceParkTests", "SpaceParkTests\SpaceParkTests.csproj", "{38FD725F-33F8-4EC4-84C3-D6C5696769CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoOnlineTests", "LudoOnlineTests\LudoOnlineTests.csproj", "{FC380F63-A326-4188-8D8F-02E33DB4CAA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38FD725F-33F8-4EC4-84C3-D6C5696769CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FD725F-33F8-4EC4-84C3-D6C5696769CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FD725F-33F8-4EC4-84C3-D6C5696769CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FD725F-33F8-4EC4-84C3-D6C5696769CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

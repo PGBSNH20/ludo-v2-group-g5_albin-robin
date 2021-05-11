@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SpacePark-API\SpacePark-API.csproj" />
-    <ProjectReference Include="..\SpacePark_ModelsDB\SpacePark_ModelsDB.csproj" />
   </ItemGroup>
 
 </Project>
