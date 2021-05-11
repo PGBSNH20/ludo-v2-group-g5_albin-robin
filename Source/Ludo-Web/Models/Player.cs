@@ -1,4 +1,6 @@
-﻿namespace Ludo_Web.Models
+﻿using static Ludo_Web.Models.PropertyEnums;
+
+namespace Ludo_Web.Models
 {
     public record Player
     {
@@ -7,6 +9,6 @@
         public string EmailAdress { get; set; }
         public string Password { get; set; }
         public string Language { get; set; }
-        public string PlayerType { get; set; }
+        public PlayerType PlayerType { get; set; }
     }
 }

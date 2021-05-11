@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static Ludo_Web.Models.PropertyEnums;
 
 namespace Ludo_Web.Models
 {
@@ -14,6 +15,6 @@ namespace Ludo_Web.Models
         public string URL { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public string GameStatus { get; set; }
+        public GameStatus GameStatus { get; set; }
     }
 }

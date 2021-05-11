@@ -9,7 +9,7 @@ namespace Ludo_Web.DataAccess
     interface ILudoRepository
     {
         IQueryable<Player> Players { get; }
-        //IQueryable<Game> Games { get; }
+        IQueryable<Game> Games { get; }
         IQueryable<UserToken> UserTokens { get; }
         IQueryable<GameState> GameStats { get; }
         void Add<TEntityType>(TEntityType entity);

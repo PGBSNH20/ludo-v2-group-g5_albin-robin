@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static Ludo_Web.Models.PropertyEnums;
 
 namespace Ludo_Web.Models
 {
@@ -9,8 +10,8 @@ namespace Ludo_Web.Models
         public Player Player { get; set; }
         public int GameId { get; set; }
         public int PlayerId { get; set; }
-        public string TeamColor { get; set; }
+        public TeamColor TeamColor { get; set; }
         public string PawnCoordinates { get; set; }
-        public int EndPosition { get; set; } //Is Enum
+        public EndPosition EndPosition { get; set; }
     }
 }
