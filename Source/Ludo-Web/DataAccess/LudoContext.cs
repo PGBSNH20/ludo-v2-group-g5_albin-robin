@@ -9,7 +9,7 @@ namespace Ludo_Web.DataAccess
         public LudoContext(DbContextOptions<LudoContext> options) : base(options) { }
         public DbSet<Player> Players { get; set; }
         public DbSet<Game> Games { get; set; }
-        public DbSet<PawnSavePoint> PawnSavePoints { get; set; }
-        public DbSet<PlayerGame> GamePlayers { get; set; }
+        public DbSet<GameStat> GameStats { get; set; }
+        public DbSet<UserToken> UserTokens { get; set; }
     }
 }

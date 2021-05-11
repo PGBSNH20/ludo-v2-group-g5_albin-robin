@@ -48,7 +48,7 @@ namespace Ludo_Web.DataAccess
             db.SaveChanges();
 
 
-            var playerGame = new PlayerGame { GameId = gameId, PlayerId = player.Id };
+            var playerGame = new GameStat { GameId = gameId, PlayerId = player.Id };
             db.GamePlayers.Add(playerGame);
 
             db.SaveChanges();
