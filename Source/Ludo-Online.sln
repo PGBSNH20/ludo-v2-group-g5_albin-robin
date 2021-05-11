@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web", "Ludo-Web\Ludo-Web.csproj", "{F469B917-4A69-4B3A-86D1-325489C54A9C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoEngine", "LudoEngine\LudoEngine.csproj", "{A1E887CB-83D6-4049-87D1-0D57DE9197EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePark-API", "SpacePark-API\SpacePark-API.csproj", "{E93EC837-B365-4338-89BE-0DED0F4F7F08}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceParkTests", "SpacePark
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoOnlineTests", "LudoOnlineTests\LudoOnlineTests.csproj", "{FC380F63-A326-4188-8D8F-02E33DB4CAA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo-Web.MVC", "Ludo-Web.MVC\Ludo-Web.MVC.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC", "Ludo-Web.MVC\Ludo-Web.MVC.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F469B917-4A69-4B3A-86D1-325489C54A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F469B917-4A69-4B3A-86D1-325489C54A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F469B917-4A69-4B3A-86D1-325489C54A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F469B917-4A69-4B3A-86D1-325489C54A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
