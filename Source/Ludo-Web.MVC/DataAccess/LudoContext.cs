@@ -1,7 +1,7 @@
 using Ludo_Web.MVC.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using static Ludo_Web.MVC.Models.PropertyEnums;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
 namespace Ludo_Web.DataAccess
 {
@@ -10,9 +10,7 @@ namespace Ludo_Web.DataAccess
         public LudoContext(DbContextOptions<LudoContext> options) : base(options) { }
         public DbSet<Player> Players { get; set; }
         public DbSet<Game> Games { get; set; }
-        public DbSet<GameState> GameStates { get; set; }
         public DbSet<UserToken> UserTokens { get; set; }
-        public DbSet<GamePosition> GamePositions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GameState>()
