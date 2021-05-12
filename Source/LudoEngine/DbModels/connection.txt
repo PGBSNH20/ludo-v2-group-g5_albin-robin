@@ -1,1 +1,0 @@
-﻿Server = localhost,41433; Database = LudoProject2.0; User Id = sa; Password = yourStrong(!)Password;
