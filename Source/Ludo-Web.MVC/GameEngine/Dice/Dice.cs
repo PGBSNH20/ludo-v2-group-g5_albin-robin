@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
 
-namespace LudoEngine.GameLogic.Dice
+namespace Ludo_Web.MVC.GameEngine.Dice
 {
     public class Dice : IDice
     {

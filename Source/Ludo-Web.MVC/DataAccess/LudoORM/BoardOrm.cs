@@ -1,11 +1,11 @@
 ﻿
-using LudoEngine.Enum;
+using Ludo_Web.MVC.GameEngine;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-
-namespace LudoEngine.BoardCollection.Models
+namespace Ludo_Web.MVC.Models
 {
     public static class BoardOrm
     {

@@ -1,16 +1,16 @@
-﻿using LudoConsole.Main;
-
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
-using LudoEngine.Models;
+﻿
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.GameLogic
+namespace Ludo_Web.MVC.GameEngine
 {
     public static class GameSetup
     { 

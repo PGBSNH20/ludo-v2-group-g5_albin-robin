@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.DbModel;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoConsole.Main
+namespace Ludo_Web.MVC.GameEngine
 {
     public class GamePlay
     {
         private IDice dice { get; set; }
-        public GamePlay(List<GamePlayer> players, IDice dice, GamePlayer first = null)
+        public GamePlay(List<Player> players, IDice dice, Player first = null)
         {
             this.dice = dice;
             Players = players;
@@ -40,12 +40,12 @@ namespace LudoConsole.Main
             TeamColor.Green,
             TeamColor.Yellow
         };
-        public List<GamePlayer> Players { get; set; }
+        public List<Player> Players { get; set; }
         private int iCurrentTeam { get; set; }
         public void SetFirstTeam(TeamColor color) => iCurrentTeam = OrderOfTeams.FindIndex(x => x == color);
         public void NextPlayer()
         {
-            StageSaving.CurrentTeam = iCurrentTeam;
+            //StageSaving.CurrentTeam = iCurrentTeam;
             
             iCurrentTeam++;
             iCurrentTeam = iCurrentTeam >= Players.Count ? 0 : iCurrentTeam;
@@ -56,7 +56,7 @@ namespace LudoConsole.Main
             i = i >= Players.Count ? 0 : i;
             return OrderOfTeams[i];
         }
-        public GamePlayer CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
-        public GamePlayer CurrentPlayer(bool stageSaving) => Players.Find(x => x.Color == OrderOfTeams[StageSaving.CurrentTeam]);
+        public Player CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
+        //public Player CurrentPlayer(bool stageSaving) => Players.Find(x => x.Color == OrderOfTeams[StageSaving.CurrentTeam]);
     }
 }

@@ -1,7 +1,8 @@
-﻿using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
+﻿using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.BoardCollection.Models
+namespace Ludo_Web.MVC.Models
 {
     public abstract class Player
     {

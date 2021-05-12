@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
-using LudoEngine.Models;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.GameLogic.GamePlayers
+namespace Ludo_Web.MVC.Models
 {
-    public class Stephan : BoardCollection.Models.Player
+    public class Stephan : Player
     {
         public static event Action<Stephan, int> StephanThrowEvent;
         private Action<string> WriteLogging { get; set; }

@@ -1,17 +1,12 @@
-﻿using LudoConsole.Main;
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.DbModel;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic;
-using LudoEngine.GameLogic.GamePlayers;
-using LudoEngine.GameLogic.Interfaces;
-using LudoEngine.Interfaces;
-using LudoEngine.Models;
+﻿using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.Creation
+namespace Ludo_Web.MVC.GameEngine
 {
     public class GameBuilder :
         IGameBuilderMapBoard,
@@ -30,7 +25,7 @@ namespace LudoEngine.Creation
         private List<TeamColor> _teamColors { get; set; } = new();
         private List<PawnSavePoint> _pawnSavePoints { get; set; } = new();
         private TeamColor _first { get; set; }
-        private List<GamePlayer> _gamePlayers { get; set; } = new();
+        private List<Player> _Players { get; set; } = new();
         private bool _enableSaving { get; set; }
         private void AddColor(TeamColor color)
         {
@@ -101,7 +96,7 @@ namespace LudoEngine.Creation
         public IGameBuilderNewGamePlay AddHumanPlayer(TeamColor color, IController control)
         {
             AddColor(color);
-            _gamePlayers.Add(new HumanPlayer(color,  control));
+            _Players.Add(new HumanPlayer(color,  control));
             return this;
         }
         public IGameBuilderNewGamePlay AddAIPlayer(TeamColor color, bool log = false)
@@ -109,9 +104,9 @@ namespace LudoEngine.Creation
             AddColor(color);
 
             if (log)
-                _gamePlayers.Add(new Stephan(color, new StephanLog(color)));
+                _Players.Add(new Stephan(color, new StephanLog(color)));
             else
-                _gamePlayers.Add(new Stephan(color));
+                _Players.Add(new Stephan(color));
             return this;
         }
         public IGameBuilderStartingColor SetUpPawns()
@@ -128,8 +123,8 @@ namespace LudoEngine.Creation
 
         public GamePlay ToGamePlay()
         {
-            var firstPlayer = _gamePlayers.Find(x => x.Color == _first);
-            var gamePlay = new GamePlay(_gamePlayers, _dice, firstPlayer);
+            var firstPlayer = _Players.Find(x => x.Color == _first);
+            var gamePlay = new GamePlay(_Players, _dice, firstPlayer);
             //if (_enableSaving == true) DatabaseManagement.SaveInit(gamePlay);
             return gamePlay;
         }

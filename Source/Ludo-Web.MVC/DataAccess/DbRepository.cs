@@ -1,4 +1,4 @@
-﻿using Ludo_Web.MVC.Models;
+﻿using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,7 @@ namespace Ludo_Web.DataAccess
         public DbRepository(LudoContext db) => _db = db;
         public IQueryable<Player> Players => _db.Players;
         public IQueryable<Game> Games => _db.Games;
-        public IQueryable<UserToken> UserTokens => _db.UserTokens;
-        public IQueryable<GameState> GameStates => _db.GameStates;
-        public IQueryable<GamePosition> GamePositions => _db.GamePositions;
+        public IQueryable<AccountToken> AccountTokens => _db.AccountTokens;
         public void Add<TEntityType>(TEntityType entity) => _db.Add(entity);
         public void Remove<TEntityType>(TEntityType entity) => _db.Remove(entity);
         public void SaveChanges() => _db.SaveChanges();

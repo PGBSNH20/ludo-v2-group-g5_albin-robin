@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LudoEngine.Interfaces
+namespace Ludo_Web.MVC.GameEngine
 {
     public interface IController
     {

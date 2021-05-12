@@ -1,12 +1,12 @@
 ﻿
-using LudoEngine.Enum;
-using LudoEngine.Models;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-
-namespace LudoEngine.BoardCollection.Models
+namespace Ludo_Web.MVC.GameEngine
 {
     public static class BoardFinder
     {

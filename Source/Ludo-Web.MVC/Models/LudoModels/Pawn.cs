@@ -1,14 +1,14 @@
 ﻿
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.Enum;
+using Ludo_Web.MVC.Models;
+using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
 using System;
 using System.Linq;
 
-namespace LudoEngine.Models
+namespace Ludo_Web.MVC.Models
 {
     public class Pawn
     {
-        public int Id { get; }
         public TeamColor Color { get; set; }
         public bool IsSelected { get; set; }
         public Pawn(TeamColor color)
@@ -76,7 +76,7 @@ namespace LudoEngine.Models
                 tempSquare.Pawns.Clear();
             }
 
-            if(pawnsToEradicate != 0) OnEradicationEvent?.Invoke(this, (TeamColor)enemyColor, pawnsToEradicate);
+            if (pawnsToEradicate != 0) OnEradicationEvent?.Invoke(this, (TeamColor)enemyColor, pawnsToEradicate);
             tempSquare.Pawns.Add(this);
             if (bounced == true) OnBounceEvent?.Invoke(this);
             if (tempSquare is SafezoneSquare && startingSquareIsSafeZoneSquare == false) OnSafeZoneEvent?.Invoke(this);
