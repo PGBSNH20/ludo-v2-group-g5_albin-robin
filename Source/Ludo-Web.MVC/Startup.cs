@@ -15,6 +15,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text;
 using Ludo_Web.DataAccess;
+using Ludo_Web.MVC.Models.Translations;
+using Ludo_Web.MVC.SMTP;
 
 namespace Ludo_Web.MVC
 {
@@ -30,7 +32,6 @@ namespace Ludo_Web.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
 
             services.AddTransient<ILudoRepository, DbRepository>();
