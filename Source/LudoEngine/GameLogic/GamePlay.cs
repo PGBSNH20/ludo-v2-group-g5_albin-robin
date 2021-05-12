@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LudoEngine.BoardUnits.Main;
+using LudoEngine.BoardCollection.Models;
 using LudoEngine.DbModel;
 using LudoEngine.Enum;
 using LudoEngine.GameLogic.Interfaces;
@@ -11,7 +11,7 @@ namespace LudoConsole.Main
     public class GamePlay
     {
         private IDice dice { get; set; }
-        public GamePlay(List<IGamePlayer> players, IDice dice, IGamePlayer first = null)
+        public GamePlay(List<GamePlayer> players, IDice dice, GamePlayer first = null)
         {
             this.dice = dice;
             Players = players;
@@ -27,7 +27,7 @@ namespace LudoConsole.Main
             while (true)
             {
                 CurrentPlayer().Play(dice);
-                Board.AllPlayingPawns().ForEach(x => x.IsSelected = false);
+                BoardFinder.AllPlayingPawns().ForEach(x => x.IsSelected = false);
                 OnPlayerEndsRoundEvent?.Invoke(this);
                 NextPlayer();
             }
@@ -40,12 +40,13 @@ namespace LudoConsole.Main
             TeamColor.Green,
             TeamColor.Yellow
         };
-        public List<IGamePlayer> Players { get; set; }
+        public List<GamePlayer> Players { get; set; }
         private int iCurrentTeam { get; set; }
         public void SetFirstTeam(TeamColor color) => iCurrentTeam = OrderOfTeams.FindIndex(x => x == color);
         public void NextPlayer()
         {
             StageSaving.CurrentTeam = iCurrentTeam;
+            
             iCurrentTeam++;
             iCurrentTeam = iCurrentTeam >= Players.Count ? 0 : iCurrentTeam;
         }
@@ -55,9 +56,7 @@ namespace LudoConsole.Main
             i = i >= Players.Count ? 0 : i;
             return OrderOfTeams[i];
         }
-        public IGamePlayer CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
-        public IGamePlayer CurrentPlayer(bool stageSaving) => Players.Find(x => x.Color == OrderOfTeams[StageSaving.CurrentTeam]);
-
-
+        public GamePlayer CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
+        public GamePlayer CurrentPlayer(bool stageSaving) => Players.Find(x => x.Color == OrderOfTeams[StageSaving.CurrentTeam]);
     }
 }

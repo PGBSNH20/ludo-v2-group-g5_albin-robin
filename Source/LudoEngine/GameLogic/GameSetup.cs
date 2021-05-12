@@ -1,6 +1,6 @@
 ﻿using LudoConsole.Main;
-using LudoEngine.BoardUnits.Interfaces;
-using LudoEngine.BoardUnits.Main;
+
+using LudoEngine.BoardCollection.Models;
 using LudoEngine.Enum;
 using LudoEngine.GameLogic.Interfaces;
 using LudoEngine.Models;
@@ -18,18 +18,18 @@ namespace LudoEngine.GameLogic
         {
             foreach (var sp in savePoints)
             {
-                var squareToPut = Board.BoardSquares.Find(bs => sp.XPosition == bs.BoardX && sp.YPosition == bs.BoardY);
+                var squareToPut = BoardFinder.BoardSquares.Find(bs => sp.XPosition == bs.BoardX && sp.YPosition == bs.BoardY);
                 squareToPut.Pawns.Add(new Pawn(sp.Color));
             }
         }
-        public static List<TeamColor> Load(List<IGameSquare> gameSquares, List<(TeamColor color, (int X, int Y) position)> teamCoords)
+        public static List<TeamColor> Load(List<GameSquare> gameSquares, List<(TeamColor color, (int X, int Y) position)> teamCoords)
         {
             foreach (var teamCoord in teamCoords)
                 gameSquares.Find(x => x.BoardX == teamCoord.position.X && x.BoardY == teamCoord.position.Y).Pawns.Add(new Pawn(teamCoord.color));
 
             return teamCoords.Select(x => x.color).Distinct().ToList();;
         }
-        public static void NewGame(List<IGameSquare> gameSquares, TeamColor[] colors = null)
+        public static void NewGame(List<GameSquare> gameSquares, TeamColor[] colors = null)
         {
             colors = colors ?? new TeamColor[] { TeamColor.Blue, TeamColor.Red, TeamColor.Green, TeamColor.Yellow };
 

@@ -1,4 +1,5 @@
 ﻿using LudoConsole.Main;
+using LudoEngine.BoardCollection.Models;
 using LudoEngine.Enum;
 using LudoEngine.GameLogic.GamePlayers;
 using System;
@@ -12,7 +13,7 @@ namespace LudoEngine.GameLogic.Interfaces
     public interface IInfoDisplay
     {
         void Update(string newString);
-        public void UpdateDiceRoll(IGamePlayer player, int result);
+        public void UpdateDiceRoll(GamePlayer player, int result);
         public void UpdateDiceRoll(Stephan stephan, int result);
     }
 }

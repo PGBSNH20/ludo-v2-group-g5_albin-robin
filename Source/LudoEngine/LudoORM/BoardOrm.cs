@@ -1,17 +1,17 @@
-﻿using LudoEngine.BoardUnits.Interfaces;
+﻿
 using LudoEngine.Enum;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 
-namespace LudoEngine.BoardUnits.Main
+namespace LudoEngine.BoardCollection.Models
 {
     public static class BoardOrm
     {
-        public static List<IGameSquare> Map(string filePath)
+        public static List<GameSquare> Map(string filePath)
         {
-            var squares = new List<IGameSquare>();
+            var squares = new List<GameSquare>();
             var charCoords = ReadCharCoords(filePath);
 
             foreach (var charCoord in charCoords)
@@ -20,7 +20,7 @@ namespace LudoEngine.BoardUnits.Main
                 int x = charCoord.X;
                 int y = charCoord.Y;
 
-                IGameSquare newSquare =
+                GameSquare newSquare =
                     chr == '0' ? new StandardSquare(x, y, BoardDirection.Up) :
                     chr == '1' ? new StandardSquare(x, y, BoardDirection.Right) :
                     chr == '2' ? new StandardSquare(x, y, BoardDirection.Down) :

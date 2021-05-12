@@ -10,7 +10,7 @@ namespace LudoEngine.Models
     public class PawnSavePoint
     {
         public int Id { get; set; }
-        public Game Game { get; set; }
+        public OldGame Game { get; set; }
         public TeamColor Color { get; set; }
         public int PlayerType { get; set; }
         public int XPosition { get; set; }

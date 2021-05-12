@@ -7,6 +7,6 @@ namespace LudoEngine.Models
         public int PlayerId { get; set; }
         public ICollection<Player> Player { get; set; }
         public int GameId { get; set; }
-        public ICollection<Game> Game { get; set; }
+        public ICollection<OldGame> Game { get; set; }
     }
 }

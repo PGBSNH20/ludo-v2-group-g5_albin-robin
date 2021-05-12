@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoEngine", "LudoEngine\LudoEngine.csproj", "{A1E887CB-83D6-4049-87D1-0D57DE9197EF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePark-API", "SpacePark-API\SpacePark-API.csproj", "{E93EC837-B365-4338-89BE-0DED0F4F7F08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceParkTests", "SpaceParkTests\SpaceParkTests.csproj", "{38FD725F-33F8-4EC4-84C3-D6C5696769CC}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoOnlineTests", "LudoOnli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC", "Ludo-Web.MVC\Ludo-Web.MVC.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoEngine", "LudoEngine\LudoEngine.csproj", "{2BF70F86-E26B-4596-ACD6-937F7EFBB857}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1E887CB-83D6-4049-87D1-0D57DE9197EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93EC837-B365-4338-89BE-0DED0F4F7F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF70F86-E26B-4596-ACD6-937F7EFBB857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF70F86-E26B-4596-ACD6-937F7EFBB857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF70F86-E26B-4596-ACD6-937F7EFBB857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF70F86-E26B-4596-ACD6-937F7EFBB857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

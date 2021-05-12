@@ -1,5 +1,5 @@
 ﻿using LudoConsole.Main;
-using LudoEngine.BoardUnits.Main;
+using LudoEngine.BoardCollection.Models;
 using LudoEngine.DbModel;
 using LudoEngine.Enum;
 using LudoEngine.GameLogic;
@@ -30,7 +30,7 @@ namespace LudoEngine.Creation
         private List<TeamColor> _teamColors { get; set; } = new();
         private List<PawnSavePoint> _pawnSavePoints { get; set; } = new();
         private TeamColor _first { get; set; }
-        private List<IGamePlayer> _gamePlayers { get; set; } = new();
+        private List<GamePlayer> _gamePlayers { get; set; } = new();
         private bool _enableSaving { get; set; }
         private void AddColor(TeamColor color)
         {
@@ -40,7 +40,7 @@ namespace LudoEngine.Creation
         public static IGameBuilderMapBoard StartBuild() => new GameBuilder();
         public IGameBuilderAddDice MapBoard(string filePath)
         {
-            Board.BoardSquares = BoardOrm.Map(filePath);
+            BoardFinder.BoardSquares = BoardOrm.Map(filePath);
             return this;
         }
         public IGameBuilderSetInfoDisplay AddDice(IDice dice)
@@ -116,7 +116,7 @@ namespace LudoEngine.Creation
         }
         public IGameBuilderStartingColor SetUpPawns()
         {
-            GameSetup.NewGame(Board.BoardSquares, _teamColors.ToArray());
+            GameSetup.NewGame(BoardFinder.BoardSquares, _teamColors.ToArray());
             return this;
         }
         public IGameBuilderGamePlay DisableSaving() => this;
@@ -130,7 +130,7 @@ namespace LudoEngine.Creation
         {
             var firstPlayer = _gamePlayers.Find(x => x.Color == _first);
             var gamePlay = new GamePlay(_gamePlayers, _dice, firstPlayer);
-            if (_enableSaving == true) DatabaseManagement.SaveInit(gamePlay);
+            //if (_enableSaving == true) DatabaseManagement.SaveInit(gamePlay);
             return gamePlay;
         }
     }
