@@ -1,18 +1,9 @@
 using Ludo_Web.MVC;
-using System;
 using Xunit;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Net.Http;
-using Newtonsoft.Json;
-using System.Net;
-using System.Text;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
-using Ludo_Web.DataAccess;
-using Ludo_Web.MVC.Models;
-using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.DataEntity.DataAccess;
+using Ludo_Web.DataEntity.Models;
+using Ludo_Web.DataEntity.Models.Account;
 
 namespace LudoOnlineTests
 {
@@ -33,7 +24,7 @@ namespace LudoOnlineTests
             var player1 = new Account()
             {
                 EmailAdress = "ace@ventura.com",
-                Language = Language.en_US,
+                Language = ModelEnum.Language.en_US,
                 PlayerName = "Ace_Mighty",
                 Password = "animalDicks",
             };

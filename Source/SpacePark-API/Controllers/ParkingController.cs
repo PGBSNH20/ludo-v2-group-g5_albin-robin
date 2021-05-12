@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SpacePark_API.Authentication;
 using SpacePark_API.DataAccess;
 using SpacePark_API.Models;
-using SpacePark_API.Networking;
 
 namespace SpacePark_API.Controllers
 {

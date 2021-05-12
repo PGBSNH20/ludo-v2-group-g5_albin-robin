@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Net;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +12,6 @@ using Microsoft.IdentityModel.Tokens;
 using SpacePark_API.Authentication;
 using SpacePark_API.DataAccess;
 using SpacePark_API.Models;
-using SpacePark_API.Networking;
 
 namespace SpacePark_API.Controllers
 {

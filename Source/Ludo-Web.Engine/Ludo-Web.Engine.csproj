@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Ludo_Web.Engine</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ludo-Web.DataEntity\Ludo-Web.DataEntity.csproj" />
+    </ItemGroup>
+
+</Project>
