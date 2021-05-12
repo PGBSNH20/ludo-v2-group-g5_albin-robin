@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.GameLogic
+namespace Ludo_Web.MVC.GameEngine
 {
     public class StephanLog : ILog
     {

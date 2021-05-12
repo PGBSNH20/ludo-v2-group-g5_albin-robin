@@ -1,8 +1,6 @@
-﻿using LudoEngine.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using static Ludo_Web.MVC.Models.ModelEnum;
 
 namespace Ludo_Web.MVC.Models
@@ -13,7 +11,7 @@ namespace Ludo_Web.MVC.Models
         public int Id { get; set; }
         [Required]
         public string Url { get; set; }
-        ICollection<Player> GamePlayers { get; set; }
+        ICollection<Player> Players { get; set; }
 
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }

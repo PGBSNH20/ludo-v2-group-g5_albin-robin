@@ -14,7 +14,5 @@ namespace Ludo_Web.MVC.Models
         public string Password { get; set; }
         [Required]
         public Language Language { get; set; }
-        [Required]
-        public PlayerType PlayerType { get; set; }
     }
 }

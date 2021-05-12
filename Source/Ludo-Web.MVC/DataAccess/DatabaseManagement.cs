@@ -1,14 +1,14 @@
 //using System.IO;
 //using Microsoft.EntityFrameworkCore;
-//using Ludo_Web.MVC.Models;
-//using LudoEngine.Enum;
+//using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+//using Ludo_Web.MVC.GameEngine;
 //using System.Linq;
 //using System;
 //using System.Collections.Generic;
 //using LudoEngine.BoardUnits.Main;
 //using System.Threading;
-//using LudoConsole.Main;
-//using LudoEngine.GameLogic.GamePlayers;
+//using Ludo_Web.MVC.GameEngine;
+//using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
 
 //namespace Ludo_Web.DataAccess
 //{
@@ -49,7 +49,7 @@
 
 
 //            var playerGame = new GameStat { GameId = gameId, PlayerId = player.Id };
-//            db.GamePlayers.Add(playerGame);
+//            db.Players.Add(playerGame);
 
 //            db.SaveChanges();
 //        }
@@ -91,18 +91,18 @@
 //            using var db = new LudoContext();
 
 //            var player = db.Players;
-//            var gamePlayers = db.GamePlayers;
+//            var Players = db.Players;
 
 //            var players = player
 //                .Join(
-//                gamePlayers,
+//                Players,
 //                player => player.Id,
-//                gamePlayers => gamePlayers.PlayerId,
-//                (player, gamePlayers) => new
+//                Players => Players.PlayerId,
+//                (player, Players) => new
 //                {
 //                    player.Id,
 //                    player.PlayerName,
-//                    gamePlayers.GameId
+//                    Players.GameId
 //                })
 //                .Where(x => x.GameId == gameId);
 
@@ -141,7 +141,7 @@
 //        {
 //            using var db = new LudoContext();
 
-//            var gameId = db.GamePlayers
+//            var gameId = db.Players
 //                .Where(x => x.PlayerId == playerId)
 //                .Select(x => x.GameId).ToList();
 

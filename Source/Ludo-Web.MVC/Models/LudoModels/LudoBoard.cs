@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LudoEngine.BoardCollection.Models
+namespace Ludo_Web.MVC.Models
 {
     public class LudoBoard
     {

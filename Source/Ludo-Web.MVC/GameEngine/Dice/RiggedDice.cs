@@ -1,11 +1,11 @@
-﻿using LudoEngine.GameLogic.Interfaces;
+﻿using Ludo_Web.MVC.GameEngine.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LudoEngine.GameLogic.Dice
+namespace Ludo_Web.MVC.GameEngine.Dice
 {
     public class RiggedDice : IDice
     {

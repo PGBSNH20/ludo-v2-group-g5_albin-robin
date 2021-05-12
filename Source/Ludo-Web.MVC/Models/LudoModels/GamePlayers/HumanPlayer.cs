@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using LudoEngine.BoardCollection.Models;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
-using LudoEngine.Interfaces;
-using LudoEngine.Models;
+using Ludo_Web.MVC.Models; using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC.GameEngine;
+using Ludo_Web.MVC.GameEngine.Interfaces;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.GameLogic.GamePlayers
+namespace Ludo_Web.MVC.Models
 {
-    public class HumanPlayer : BoardCollection.Models.Player
+    public class HumanPlayer : Player
     {
         public HumanPlayer(TeamColor color, IController eventController)
         {
@@ -20,8 +19,8 @@ namespace LudoEngine.GameLogic.GamePlayers
         }
         private int _result { get; set; }
         private IController Controller { get; set; }
-        public static event Action<BoardCollection.Models.Player, int> HumanThrowEvent;
-        public static event Action<BoardCollection.Models.Player> OnTakeOutTwoPossibleEvent;
+        public static event Action<Player, int> HumanThrowEvent;
+        public static event Action<Player> OnTakeOutTwoPossibleEvent;
         private List<Pawn> _pawnsToMove { get; set; } = new();
         private int _pawnIndex { get; set; }
         private IDice _dice { get; set; }

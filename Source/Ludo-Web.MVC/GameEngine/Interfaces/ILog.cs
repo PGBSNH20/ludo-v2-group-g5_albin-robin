@@ -1,4 +1,4 @@
-﻿namespace LudoEngine.GameLogic.Interfaces
+﻿namespace Ludo_Web.MVC.GameEngine.Interfaces
 {
     public interface ILog
     {

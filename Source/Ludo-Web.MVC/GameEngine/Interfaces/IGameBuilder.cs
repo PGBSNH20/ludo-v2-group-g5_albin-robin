@@ -1,12 +1,8 @@
-﻿using LudoConsole.Main;
-using LudoEngine.Enum;
-using LudoEngine.GameLogic.Interfaces;
-using LudoEngine.Interfaces;
-using LudoEngine.Models;
+﻿using Ludo_Web.MVC.GameEngine.Interfaces;
 using System;
-using System.Collections.Generic;
+using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace LudoEngine.Creation
+namespace Ludo_Web.MVC.GameEngine
 {
     public interface IGameBuilderMapBoard
     {
@@ -27,7 +23,7 @@ namespace LudoEngine.Creation
     }
     public interface IGameBuilderLoadPawns
     {
-        public IGameBuilderLoadPlayers LoadPawns(List<PawnSavePoint> savePoints);
+        //public IGameBuilderLoadPlayers LoadPawns(List<PawnSavePoint> savePoints); //TODO save
     }
     public interface IGameBuilderNewGame
     {
