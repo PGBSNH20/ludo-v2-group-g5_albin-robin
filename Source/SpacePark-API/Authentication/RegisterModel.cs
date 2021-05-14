@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using SpacePark_API.Models;
 
 namespace SpacePark_API.Authentication
 {

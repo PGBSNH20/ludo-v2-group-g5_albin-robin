@@ -7,9 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePark-API", "SpacePark-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceParkTests", "SpaceParkTests\SpaceParkTests.csproj", "{38FD725F-33F8-4EC4-84C3-D6C5696769CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoOnlineTests", "LudoOnlineTests\LudoOnlineTests.csproj", "{FC380F63-A326-4188-8D8F-02E33DB4CAA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoOnlinePlatformTests", "LudoOnlinePlatformTests\LudoOnlinePlatformTests.csproj", "{FC380F63-A326-4188-8D8F-02E33DB4CAA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC", "Ludo-Web.MVC\Ludo-Web.MVC.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo-Web.MVC-Game", "Ludo-Web.MVC-Game\Ludo-Web.MVC-Game.csproj", "{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoTranslation", "LudoTranslation\LudoTranslation.csproj", "{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo-Web.MVC-Platform", "Ludo-Web.MVC-Platform\Ludo-Web.MVC-Platform.csproj", "{8ED8EFED-30FD-437C-B2E5-9686FB804254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoOnlineGameTests", "LudoOnlineGameTests\LudoOnlineGameTests.csproj", "{5216529F-3006-4912-8611-740992F74BED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +35,22 @@ Global
 		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC380F63-A326-4188-8D8F-02E33DB4CAA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED8EFED-30FD-437C-B2E5-9686FB804254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED8EFED-30FD-437C-B2E5-9686FB804254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED8EFED-30FD-437C-B2E5-9686FB804254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED8EFED-30FD-437C-B2E5-9686FB804254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5216529F-3006-4912-8611-740992F74BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5216529F-3006-4912-8611-740992F74BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5216529F-3006-4912-8611-740992F74BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5216529F-3006-4912-8611-740992F74BED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
