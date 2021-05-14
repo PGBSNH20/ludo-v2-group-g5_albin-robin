@@ -17,7 +17,7 @@ namespace LudoTranslation
         public static void InitializeLanguage(string lang)
         {
             var line = "";
-            var reader = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + "/Models/Translations/Resources/" + lang + ".lang");
+            var reader = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + "/Translations/" + lang + ".lang");
             while ((line = reader.ReadLine()) != null && !string.IsNullOrWhiteSpace(line) && line.Contains("=="))
             {
                 var lineSplit = line.Split("==");
