@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ludo-Web.MVC\Ludo-Web.MVC.csproj" />
+    <ProjectReference Include="..\Ludo-Web.MVC\Ludo-Web.MVC-Platform.csproj" />
   </ItemGroup>
 
 </Project>

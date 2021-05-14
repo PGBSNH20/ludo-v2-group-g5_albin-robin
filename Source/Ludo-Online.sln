@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceParkTests", "SpacePark
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LudoOnlineTests", "LudoOnlineTests\LudoOnlineTests.csproj", "{FC380F63-A326-4188-8D8F-02E33DB4CAA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC", "Ludo-Web.MVC\Ludo-Web.MVC.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC-Platform", "Ludo-Web.MVC\Ludo-Web.MVC-Platform.csproj", "{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo-Web.MVC-Game", "Ludo-Web.MVC-Game\Ludo-Web.MVC-Game.csproj", "{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1463EE1-3DEB-49C5-8C29-BE9EFE20C688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
