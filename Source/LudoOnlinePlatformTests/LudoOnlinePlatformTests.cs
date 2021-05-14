@@ -1,28 +1,18 @@
-using Ludo_Web.MVC;
-using System;
 using Xunit;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Net.Http;
-using Newtonsoft.Json;
-using System.Net;
-using System.Text;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
-using Ludo_Web.MVC.DataAccess;
-using Ludo_Web.MVC.Models;
-using Ludo_Web.MVC.Models.Account;
-using static Ludo_Web.MVC.Models.ModelEnum;
+using Ludo_Web.MVC_Platform;
+using Ludo_Web.MVC_Platform.DataAccess;
+using Ludo_Web.MVC_Platform.Models;
+using Ludo_Web.MVC_Platform.Models.Account;
 
-namespace LudoOnlineTests
+namespace LudoOnlinePlatformTests
 {
-    public class LudoOnlineTests : IClassFixture<FakeWebHost<Startup>>
+    public class LudoOnlinePlatformTests : IClassFixture<FakeWebHost<Startup>>
     {
         private ILudoPlatformRepository _repository;
         private FakeWebHost<Startup> _fakeHost;
         public HttpClient Client { get; }
-        public LudoOnlineTests(FakeWebHost<Startup> fakeHost)
+        public LudoOnlinePlatformTests(FakeWebHost<Startup> fakeHost)
         {
             _fakeHost = fakeHost;
             Client = fakeHost.CreateClient();
@@ -34,7 +24,7 @@ namespace LudoOnlineTests
             var player1 = new Account()
             {
                 EmailAdress = "ace@ventura.com",
-                Language = Language.en_US,
+                Language = ModelEnum.Language.en_US,
                 PlayerName = "Ace_Mighty",
                 Password = "animalDicks",
             };

@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace Ludo_Web.MVC.Models.Account
+namespace Ludo_Web.MVC_Platform.Models.Account
 {
     public record Account
     {
@@ -13,6 +12,6 @@ namespace Ludo_Web.MVC.Models.Account
         [Required]
         public string Password { get; set; }
         [Required]
-        public Language Language { get; set; }
+        public ModelEnum.Language Language { get; set; }
     }
 }

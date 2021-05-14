@@ -1,4 +1,4 @@
-namespace Ludo_Web.MVC.Models.Error
+namespace Ludo_Web.MVC_Platform.Models.Error
 {
     public class ErrorViewModel
     {

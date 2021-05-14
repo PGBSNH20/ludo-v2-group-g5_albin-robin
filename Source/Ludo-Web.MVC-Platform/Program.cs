@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Ludo_Web.MVC
+namespace Ludo_Web.MVC_Platform
 {
     public class Program
     {

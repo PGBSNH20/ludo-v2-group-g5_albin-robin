@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ludo-Web.MVC\Ludo-Web.MVC-Platform.csproj" />
+    <ProjectReference Include="..\Ludo-Web.MVC-Platform\Ludo-Web.MVC-Platform.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Net.Http;
-using Ludo_Web.MVC.DataAccess;
+using Ludo_Web.MVC_Platform.DataAccess;
 
-namespace LudoOnlineTests
+namespace LudoOnlinePlatformTests
 {
     public class FakeWebHost<TStartup>
     : WebApplicationFactory<TStartup> where TStartup : class

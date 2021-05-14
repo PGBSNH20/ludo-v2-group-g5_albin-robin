@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
-using Ludo_Web.MVC.DataAccess;
+using Ludo_Web.MVC_Platform.DataAccess;
 
-namespace Ludo_Web.MVC
+namespace Ludo_Web.MVC_Platform
 {
     public class Startup
     {

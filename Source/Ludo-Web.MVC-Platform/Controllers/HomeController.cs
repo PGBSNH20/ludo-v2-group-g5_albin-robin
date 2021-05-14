@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using Ludo_Web.MVC.Models.Error;
+using Ludo_Web.MVC_Platform.Models.Error;
 
-namespace Ludo_Web.MVC.Controllers
+namespace Ludo_Web.MVC_Platform.Controllers
 {
     public class HomeController : Controller
     {

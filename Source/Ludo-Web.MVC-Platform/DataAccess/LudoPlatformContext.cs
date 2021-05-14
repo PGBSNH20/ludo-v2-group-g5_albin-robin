@@ -1,7 +1,7 @@
-using Ludo_Web.MVC.Models.Account;
+using Ludo_Web.MVC_Platform.Models.Account;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ludo_Web.MVC.DataAccess
+namespace Ludo_Web.MVC_Platform.DataAccess
 {
     public class LudoPlatformContext : DbContext
     {

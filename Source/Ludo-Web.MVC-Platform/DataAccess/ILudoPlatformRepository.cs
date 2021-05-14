@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Ludo_Web.MVC.Models.Account;
+using Ludo_Web.MVC_Platform.Models.Account;
 
-namespace Ludo_Web.MVC.DataAccess
+namespace Ludo_Web.MVC_Platform.DataAccess
 {
     public interface ILudoPlatformRepository
     {

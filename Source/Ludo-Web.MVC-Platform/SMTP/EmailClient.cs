@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Reflection;
 using LudoTranslation;
 
-namespace Ludo_Web.MVC.SMTP
+namespace Ludo_Web.MVC_Platform.SMTP
 {
     public static class EmailClient
     {
