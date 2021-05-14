@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Ludo_Web.MVC.Models.Translations
+namespace LudoTranslation
 {
     public static class TranslationEngine
     {

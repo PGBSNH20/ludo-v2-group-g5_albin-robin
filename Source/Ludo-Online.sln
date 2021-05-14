@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ludo-Web.MVC-Platform", "Lu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo-Web.MVC-Game", "Ludo-Web.MVC-Game\Ludo-Web.MVC-Game.csproj", "{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoTranslation", "LudoTranslation\LudoTranslation.csproj", "{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA26E5A-51E7-441C-B475-BF2BE0A1F5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B36E454-2C5C-42B3-85EA-C0099AEAFB50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
