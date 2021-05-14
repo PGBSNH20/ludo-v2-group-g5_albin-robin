@@ -25,12 +25,17 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Models\LudoModels" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="SMTP\Resources\emailbody_raw.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LudoTranslation\LudoTranslation.csproj" />
   </ItemGroup>
 
 </Project>

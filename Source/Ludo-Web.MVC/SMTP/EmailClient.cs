@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
-using Ludo_Web.MVC.Models.Translations;
+using LudoTranslation;
 
 namespace Ludo_Web.MVC.SMTP
 {

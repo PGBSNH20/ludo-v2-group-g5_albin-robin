@@ -16,7 +16,6 @@ using Microsoft.IdentityModel.Tokens;
 using SpacePark_API.Authentication;
 using SpacePark_API.DataAccess;
 using SpacePark_API.Models;
-using SpacePark_API.Networking;
 
 namespace SpacePark_API.Controllers
 {

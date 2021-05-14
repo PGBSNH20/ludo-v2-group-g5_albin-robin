@@ -2,21 +2,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.IO;
 using System.Text;
-using Ludo_Web.DataAccess;
-using Ludo_Web.MVC.Models.Translations;
-using Ludo_Web.MVC.SMTP;
+using Ludo_Web.MVC.DataAccess;
 
 namespace Ludo_Web.MVC
 {
@@ -34,11 +25,11 @@ namespace Ludo_Web.MVC
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<ILudoRepository, DbRepository>();
+            services.AddTransient<ILudoPlatformRepository, DbPlatformRepository>();
             //if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt"))
             //    services.AddDbContext<LudoContext>(options => options.UseSqlServer(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt")));
             //else
-            services.AddDbContext<LudoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+            services.AddDbContext<LudoPlatformContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
 
             services.AddAuthentication(options =>
             {

@@ -10,22 +10,23 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
-using Ludo_Web.DataAccess;
+using Ludo_Web.MVC.DataAccess;
 using Ludo_Web.MVC.Models;
+using Ludo_Web.MVC.Models.Account;
 using static Ludo_Web.MVC.Models.ModelEnum;
 
 namespace LudoOnlineTests
 {
     public class LudoOnlineTests : IClassFixture<FakeWebHost<Startup>>
     {
-        private ILudoRepository _repository;
+        private ILudoPlatformRepository _repository;
         private FakeWebHost<Startup> _fakeHost;
         public HttpClient Client { get; }
         public LudoOnlineTests(FakeWebHost<Startup> fakeHost)
         {
             _fakeHost = fakeHost;
             Client = fakeHost.CreateClient();
-            _repository = new DbRepository(fakeHost.InMemoryContext);
+            _repository = new DbPlatformRepository(fakeHost.InMemoryContext);
         }
         [Fact]
         public void GetPlayerFromDb_ExpectCorrectEnum()

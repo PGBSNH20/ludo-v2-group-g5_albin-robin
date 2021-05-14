@@ -8,7 +8,6 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Net;
 using SpacePark_API;
-using SpacePark_API.Networking;
 using System.Text;
 using SpacePark_API.Authentication;
 using Microsoft.AspNetCore.Mvc;

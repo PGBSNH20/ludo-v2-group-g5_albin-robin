@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static Ludo_Web.MVC.Models.ModelEnum;
 
-namespace Ludo_Web.MVC.Models
+namespace Ludo_Web.MVC.Models.Account
 {
     public record Account
     {

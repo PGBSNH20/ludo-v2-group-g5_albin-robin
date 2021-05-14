@@ -1,6 +1,4 @@
-using System;
-
-namespace Ludo_Web.MVC_Game.Models
+namespace Ludo_Web.MVC_Game.Models.Errors
 {
     public class ErrorViewModel
     {

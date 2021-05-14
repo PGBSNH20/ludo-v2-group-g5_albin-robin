@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Net.Http;
-using Ludo_Web.DataAccess;
+using Ludo_Web.MVC.DataAccess;
 
 namespace LudoOnlineTests
 {
@@ -21,17 +21,17 @@ namespace LudoOnlineTests
         {
             return base.CreateClient();
         }
-        private LudoContext _inMemoryContext;
-        public LudoContext InMemoryContext
+        private LudoPlatformContext _inMemoryContext;
+        public LudoPlatformContext InMemoryContext
         {
             get
             {
                 if (_inMemoryContext == null)
                 {
-                    var options = new DbContextOptionsBuilder<LudoContext>()
+                    var options = new DbContextOptionsBuilder<LudoPlatformContext>()
                              .UseInMemoryDatabase(databaseName: _dbName)
                              .Options;
-                    _inMemoryContext = new LudoContext(options);
+                    _inMemoryContext = new LudoPlatformContext(options);
                 }
                 return _inMemoryContext;
             }
@@ -42,11 +42,11 @@ namespace LudoOnlineTests
             {
                 var descriptor = services.SingleOrDefault(
                     d => d.ServiceType ==
-                        typeof(DbContextOptions<LudoContext>));
+                        typeof(DbContextOptions<LudoPlatformContext>));
 
                 services.Remove(descriptor);
                 
-                services.AddDbContext<LudoContext>(options =>
+                services.AddDbContext<LudoPlatformContext>(options =>
                 {
                     options.UseInMemoryDatabase(databaseName: _dbName);
                 });
@@ -55,7 +55,7 @@ namespace LudoOnlineTests
                 using (var scope = sp.CreateScope())
                 {
                     var scopedServices = scope.ServiceProvider;
-                    var dbContext = scopedServices.GetRequiredService<LudoContext>();
+                    var dbContext = scopedServices.GetRequiredService<LudoPlatformContext>();
                     var logger = scopedServices
                         .GetRequiredService<ILogger<FakeWebHost<TStartup>>>();
 
