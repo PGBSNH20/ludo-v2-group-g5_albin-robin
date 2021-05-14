@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Ludo_Web.MVC_Game.Models;
 
 namespace Ludo_Web.MVC_Game.GameEngine.Interfaces
@@ -22,7 +23,7 @@ namespace Ludo_Web.MVC_Game.GameEngine.Interfaces
     }
     public interface IGameBuilderLoadPawns
     {
-        //public IGameBuilderLoadPlayers LoadPawns(List<PawnSavePoint> savePoints); //TODO save
+        public IGameBuilderLoadPlayers LoadPawns(List<PawnSavePoint> savePoints);
     }
     public interface IGameBuilderNewGame
     {

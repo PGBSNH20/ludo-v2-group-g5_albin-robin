@@ -7,6 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AI\ai-test-map1.txt" />
+    <None Remove="board-pawn\test-copy_BoardMap.txt" />
+    <None Remove="board-pawn\test-map-2p.txt" />
+    <None Remove="board-pawn\test-map1.txt" />
+    <None Remove="board-pawn\test-map3.txt" />
+    <None Remove="board-pawn\test-map4.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="board-pawn\test-map-2p.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AI\ai-test-map1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="board-pawn\test-map1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="board-pawn\test-copy_BoardMap.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="board-pawn\test-map3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="board-pawn\test-map4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.5" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.5" />
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
