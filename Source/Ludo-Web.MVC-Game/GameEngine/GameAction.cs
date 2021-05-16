@@ -10,10 +10,10 @@ namespace Ludo_Web.MVC_Game.GameEngine
 {
     public class GameAction
     {
-        private List<GameSquare> _boardSquares;
-        public GameAction(LudoBoard board)
+        private readonly List<GameSquare> _boardSquares;
+        public GameAction(List<GameSquare> squares)
         {
-            _boardSquares = board.GameSquares.ToList();
+            _boardSquares = squares;
         }
 
         public static event Action<Pawn> OnBounceEvent;

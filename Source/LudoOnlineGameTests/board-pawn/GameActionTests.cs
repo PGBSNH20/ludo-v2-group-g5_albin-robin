@@ -20,8 +20,8 @@ namespace LudoOnlineGameTests.board_pawn
         public void MoveToExit_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
+            
+            var action = new GameAction(squares);
 
             var bluePawn = new Pawn(TeamColor.Blue);
             var baseSquare = BaseSquare(squares, TeamColor.Blue);
@@ -36,8 +36,8 @@ namespace LudoOnlineGameTests.board_pawn
         public void MoveToFinish_AndRemoveFromBoard_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
+            
+            var action = new GameAction(squares);
 
             var bluePawn = new Pawn(TeamColor.Blue);
             var baseSquare = BaseSquare(squares, TeamColor.Blue);
@@ -52,8 +52,8 @@ namespace LudoOnlineGameTests.board_pawn
         public void BlueBounceFromFinish_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map4.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
+            
+            var action = new GameAction(squares);
 
             var bluePawn = new Pawn(TeamColor.Blue);
             var baseSquare = BaseSquare(squares, TeamColor.Blue);
@@ -68,9 +68,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void RedExitSquare_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map3.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var BoardFind = new BoardFind(board);
-            var action = new GameAction(board);
+            
+            var BoardFind = new BoardFind(squares);
+            var action = new GameAction(squares);
 
             var redPawn = new Pawn(TeamColor.Red);
             var startSquare = StartSquare(squares, TeamColor.Red);
@@ -84,9 +84,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void RedSafeZoneSquare_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map3.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
             var redPawn = new Pawn(TeamColor.Red);
 
             var startSquare = BoardFind.StartSquare(TeamColor.Red);
@@ -100,9 +100,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void RedGoal_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map3.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             var redPawn = new Pawn(TeamColor.Red);
             var startSquare = BoardFind.StartSquare(TeamColor.Red);
@@ -116,9 +116,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void RedGoalBounce_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map3.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             var redPawn = new Pawn(TeamColor.Red);
             var startSquare = BoardFind.StartSquare(TeamColor.Red);
@@ -133,9 +133,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void RedGoalBounce2_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map3.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             var redPawn = new Pawn(TeamColor.Red);
             var startSquare = BoardFind.StartSquare(TeamColor.Red);
@@ -150,9 +150,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void MoveUpNotFinish_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             var redPawn = new Pawn(TeamColor.Red);
             var start = squares.Find(x => x.BoardX == 0 && x.BoardY == 1);
@@ -167,9 +167,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void ErradicateOne_AssertBaseSquare()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             var bluePawn = new Pawn(TeamColor.Blue);
             var baseSquare = BoardFind.BaseSquare(TeamColor.Blue);
@@ -188,9 +188,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void ErradicateTwo_AssertTwoInBase()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
             
             var bluePawn = new Pawn(TeamColor.Blue);
             var baseSquare = BoardFind.BaseSquare(TeamColor.Blue);
@@ -210,9 +210,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void GameSetup_fourRed_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map1.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             GameSetup.NewGame(squares, new TeamColor[] { TeamColor.Blue, TeamColor.Red });
             var redsBased = BoardFind.PawnsInBase(TeamColor.Red);
@@ -223,9 +223,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void GameSetup_fourBlue_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map-2p.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             GameSetup.NewGame(squares, new TeamColor[] { TeamColor.Blue, TeamColor.Green });
             var bluesBased = BoardFind.PawnsInBase(TeamColor.Blue);
@@ -236,9 +236,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void GameSetUp_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map-2p.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             GameSetup.NewGame(squares, new TeamColor[] { TeamColor.Blue, TeamColor.Green });
             var greensBased = BoardFind.PawnsInBase(TeamColor.Green);
@@ -249,9 +249,9 @@ namespace LudoOnlineGameTests.board_pawn
         public void GetTeamPawns_AssertTrue()
         {
             var squares = BoardOrm.Map(@"board-pawn/test-map-2p.txt");
-            var board = new LudoBoard() { GameSquares = squares };
-            var action = new GameAction(board);
-            var BoardFind = new BoardFind(board);
+            
+            var action = new GameAction(squares);
+            var BoardFind = new BoardFind(squares);
 
             GameSetup.NewGame(squares, new TeamColor[] { TeamColor.Blue, TeamColor.Green });
 
@@ -262,9 +262,9 @@ namespace LudoOnlineGameTests.board_pawn
         private class BoardFind
         {
             private List<GameSquare> BoardSquares { get; set; }
-            public BoardFind(LudoBoard board)
+            public BoardFind(List<GameSquare> squares)
             {
-                BoardSquares = board.GameSquares.ToList();
+                BoardSquares = squares;
             }
             public List<Pawn> PawnsInBase(TeamColor color) =>
                 BoardSquares.Find(x => x.GetType() == typeof(BaseSquare) && x.Color == color).Pawns;
