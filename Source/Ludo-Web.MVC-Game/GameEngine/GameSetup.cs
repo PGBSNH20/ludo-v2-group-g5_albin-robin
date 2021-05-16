@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Ludo_Web.MVC_Game.GameEngine.GameSquares;
 using Ludo_Web.MVC_Game.Models;
-using Ludo_Web.MVC_Game.Models.GameSquares;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {

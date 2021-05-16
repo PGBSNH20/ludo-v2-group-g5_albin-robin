@@ -1,6 +1,7 @@
 ﻿using Ludo_Web.MVC_Game.GameEngine.Interfaces;
+using Ludo_Web.MVC_Game.Models;
 
-namespace Ludo_Web.MVC_Game.Models
+namespace Ludo_Web.MVC_Game.GameEngine
 {
     public abstract class GamePlayer
     {

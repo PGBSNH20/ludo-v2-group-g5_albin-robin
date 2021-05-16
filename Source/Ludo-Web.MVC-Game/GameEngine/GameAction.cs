@@ -1,9 +1,9 @@
 ﻿using Ludo_Web.MVC_Game.Models;
-using Ludo_Web.MVC_Game.Models.GameSquares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ludo_Web.MVC_Game.GameEngine.GameSquares;
 using static Ludo_Web.MVC_Game.Models.ModelEnum;
 
 namespace Ludo_Web.MVC_Game.GameEngine

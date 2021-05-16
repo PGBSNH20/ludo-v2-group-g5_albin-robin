@@ -1,5 +1,6 @@
 ﻿using Ludo_Web.MVC_Game.Models;
 using System.Collections.Generic;
+using Ludo_Web.MVC_Game.GameEngine.GameSquares;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {

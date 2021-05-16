@@ -1,6 +1,6 @@
 using Ludo_Web.MVC_Game.GameEngine;
+using Ludo_Web.MVC_Game.GameEngine.GameSquares;
 using Ludo_Web.MVC_Game.Models;
-using Ludo_Web.MVC_Game.Models.GameSquares;
 using Xunit;
 using static Ludo_Web.MVC_Game.Models.ModelEnum;
 

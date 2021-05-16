@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Ludo_Web.MVC_Game.GameEngine;
 
 namespace Ludo_Web.MVC_Game.Models
 {

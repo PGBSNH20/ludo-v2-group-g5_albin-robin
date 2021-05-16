@@ -1,10 +1,10 @@
 ﻿using Ludo_Web.MVC_Game.DataAccess.LudoORM;
 using Ludo_Web.MVC_Game.GameEngine;
 using Ludo_Web.MVC_Game.Models;
-using Ludo_Web.MVC_Game.Models.GameSquares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Ludo_Web.MVC_Game.GameEngine.GameSquares;
 using Xunit;
 using static Ludo_Web.MVC_Game.Models.ModelEnum;
 

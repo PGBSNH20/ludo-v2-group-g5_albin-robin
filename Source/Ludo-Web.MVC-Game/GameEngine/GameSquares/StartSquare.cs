@@ -1,7 +1,7 @@
-﻿using Ludo_Web.MVC_Game.GameEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Ludo_Web.MVC_Game.Models;
 
-namespace Ludo_Web.MVC_Game.Models.GameSquares
+namespace Ludo_Web.MVC_Game.GameEngine.GameSquares
 {
     public class StartSquare : GameSquare
     {
