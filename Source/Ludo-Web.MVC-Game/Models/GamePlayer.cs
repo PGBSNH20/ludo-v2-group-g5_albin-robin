@@ -2,7 +2,7 @@
 
 namespace Ludo_Web.MVC_Game.Models
 {
-    public abstract class Player
+    public abstract class GamePlayer
     {
         public int Id { get; set; }
         //public int Id { get; set; } //public PlayerID foreign key

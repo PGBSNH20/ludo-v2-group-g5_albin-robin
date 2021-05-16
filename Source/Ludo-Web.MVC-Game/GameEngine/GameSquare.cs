@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Ludo_Web.MVC_Game.Models;
+using System.Collections.Generic;
 
-namespace Ludo_Web.MVC_Game.Models
+namespace Ludo_Web.MVC_Game.GameEngine
 {
     public abstract class GameSquare
     {

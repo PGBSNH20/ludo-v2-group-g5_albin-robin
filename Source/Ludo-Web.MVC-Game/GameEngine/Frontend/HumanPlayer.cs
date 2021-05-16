@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using Ludo_Web.MVC_Game.GameEngine;
 using Ludo_Web.MVC_Game.GameEngine.Interfaces;
+using Ludo_Web.MVC_Game.Models;
 
-namespace Ludo_Web.MVC_Game.Models.GamePlayers
+namespace Ludo_Web.MVC_Game.GameEngine.Frontend
 {
-    public class HumanPlayer : Player
+    public class HumanPlayer : GamePlayer
     {
         public HumanPlayer(ModelEnum.TeamColor color, IController eventController)
         {
@@ -17,8 +18,8 @@ namespace Ludo_Web.MVC_Game.Models.GamePlayers
         }
         private int _result { get; set; }
         private IController Controller { get; set; }
-        public static event Action<Player, int> HumanThrowEvent;
-        public static event Action<Player> OnTakeOutTwoPossibleEvent;
+        public static event Action<GamePlayer, int> HumanThrowEvent;
+        public static event Action<GamePlayer> OnTakeOutTwoPossibleEvent;
         private List<Pawn> _pawnsToMove { get; set; } = new();
         private int _pawnIndex { get; set; }
         private IDice _dice { get; set; }
@@ -27,7 +28,7 @@ namespace Ludo_Web.MVC_Game.Models.GamePlayers
         {
             int pawnIndex = 0;
             int result = dice.Roll();
-            var pawnsToMove = GameRules.SelectablePawns(Color,result);
+            var pawnsToMove = GameRules.SelectablePawns(Color, result);
 
             _dice = dice;
             _pawnIndex = pawnIndex;

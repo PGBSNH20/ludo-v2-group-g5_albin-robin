@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ludo_Web.MVC_Game.GameEngine;
 using Ludo_Web.MVC_Game.GameEngine.Interfaces;
+using Ludo_Web.MVC_Game.Models;
 using Ludo_Web.MVC_Game.Models.GameSquares;
 
-namespace Ludo_Web.MVC_Game.Models.GamePlayers
+namespace Ludo_Web.MVC_Game.GameEngine
 {
-    public class Stephan : Player
+    public class Stephan : GamePlayer
     {
         public static event Action<Stephan, int> StephanThrowEvent;
         private Action<string> WriteLogging { get; set; }
@@ -77,8 +77,8 @@ namespace Ludo_Web.MVC_Game.Models.GamePlayers
                 var checkPawn = CheckIfPawnCanReachGoal(Pawns, dice);
                 if (checkPawn != null) return (checkPawn, false, false, 0);
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CheckIfPawnCanReachGoal] returned a null pawn. Continuing";
-                
-                
+
+
                 //Check if I can reach safezone
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CalculatePlay] Checking to see if I can reach Safezone with a pawn";
                 checkPawn = CheckIfPawnCanReachSafezone(Pawns, dice);
@@ -86,13 +86,13 @@ namespace Ludo_Web.MVC_Game.Models.GamePlayers
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CheckIfPawnCanReachSafezone] returned a null pawn. Continuing";
 
 
-                    //Check for possible eradication
+                //Check for possible eradication
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CalculatePlay] Checking if a pawn has the possibility to eradicate another pawn";
                 var pawnToEradicateWith = CheckForPossibleEradication(dice).PawnToEradicateWith;
                 if (pawnToEradicateWith != null)
                     return (pawnToEradicateWith, false, false, 0); //Returning eradication move. Method will break here
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CalculatePlay] CheckForPossibleEradication returned a null pawn. Continuing";
-                
+
 
                 //Check if pawn(s) can be taken out
                 LoggerMessage += $"\n{DateTime.Now.ToShortTimeString()}: [Method: CalculatePlay] Checking if pawn can be taken out";

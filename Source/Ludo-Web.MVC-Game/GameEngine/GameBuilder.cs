@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ludo_Web.MVC_Game.DataAccess.LudoORM;
+using Ludo_Web.MVC_Game.GameEngine.Frontend;
 using Ludo_Web.MVC_Game.GameEngine.Interfaces;
 using Ludo_Web.MVC_Game.Models;
-using Ludo_Web.MVC_Game.Models.GamePlayers;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {
@@ -25,7 +25,7 @@ namespace Ludo_Web.MVC_Game.GameEngine
         private List<ModelEnum.TeamColor> _teamColors { get; set; } = new();
         private List<PawnSavePoint> _pawnSavePoints { get; set; } = new();
         private ModelEnum.TeamColor _first { get; set; }
-        private List<Player> _Players { get; set; } = new();
+        private List<GamePlayer> _Players { get; set; } = new();
         private bool _enableSaving { get; set; }
         private void AddColor(ModelEnum.TeamColor color)
         {

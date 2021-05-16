@@ -9,7 +9,7 @@ namespace Ludo_Web.MVC_Game.GameEngine
     public class GamePlay
     {
         private IDice dice { get; set; }
-        public GamePlay(List<Player> players, IDice dice, Player first = null)
+        public GamePlay(List<GamePlayer> players, IDice dice, GamePlayer first = null)
         {
             this.dice = dice;
             Players = players;
@@ -38,7 +38,7 @@ namespace Ludo_Web.MVC_Game.GameEngine
             ModelEnum.TeamColor.Green,
             ModelEnum.TeamColor.Yellow
         };
-        public List<Player> Players { get; set; }
+        public List<GamePlayer> Players { get; set; }
         private int iCurrentTeam { get; set; }
         public void SetFirstTeam(ModelEnum.TeamColor color) => iCurrentTeam = OrderOfTeams.FindIndex(x => x == color);
         public void NextPlayer()
@@ -54,7 +54,7 @@ namespace Ludo_Web.MVC_Game.GameEngine
             i = i >= Players.Count ? 0 : i;
             return OrderOfTeams[i];
         }
-        public Player CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
+        public GamePlayer CurrentPlayer() => Players.Find(x => x.Color == OrderOfTeams[iCurrentTeam]);
         //public Player CurrentPlayer(bool stageSaving) => Players.Find(x => x.Color == OrderOfTeams[StageSaving.CurrentTeam]);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Ludo_Web.MVC_Game.GameEngine;
+using System.Collections.Generic;
 
 namespace Ludo_Web.MVC_Game.Models.GameSquares
 {

@@ -5,9 +5,8 @@ using Ludo_Web.MVC_Game.Models;
 using Ludo_Web.MVC_Game.GameEngine;
 using static Ludo_Web.MVC_Game.Models.ModelEnum;
 using Ludo_Web.MVC_Game.GameEngine.Dice;
-using Ludo_Web.MVC_Game.GameEngine.Interfaces;
-using Ludo_Web.MVC_Game.Models.GamePlayers;
 using System;
+using Ludo_Web.MVC_Game.GameEngine.Frontend;
 
 namespace LudoOnlineGameTests.board_pawn
 {
@@ -18,7 +17,7 @@ namespace LudoOnlineGameTests.board_pawn
             throw new System.NotImplementedException();
         }
 
-        public void UpdateDiceRoll(Player player, int result)
+        public void UpdateDiceRoll(GamePlayer player, int result)
         {
             throw new System.NotImplementedException();
         }
