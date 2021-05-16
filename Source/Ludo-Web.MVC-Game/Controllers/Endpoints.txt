@@ -1,0 +1,20 @@
+﻿GetGame(GameID)
+Returns information about a game from the database
+
+GetActiveGames
+Returns all currently active games
+
+GetArchivedGames
+Returns all games currently marked as archived
+
+SaveGame(Parameters to be investigated)
+Save a game with all it's data to the database.
+--Possible auto-saving rendering this method obsolete.
+
+
+Investigation:
+* Discuss possible endpoints regarding game logic. 
+  It feels more natural to have them in raw code inside the game, 
+  but to fulfill project requirements we might need to implement it as endpoints.
+
+
