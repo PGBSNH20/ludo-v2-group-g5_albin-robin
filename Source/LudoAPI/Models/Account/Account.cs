@@ -14,5 +14,6 @@ namespace LudoAPI.Models.Account
         public string Password { get; set; }
         [Required]
         public TranslationEngine.Language Language { get; set; }
+        public string Role { get; set; }
     }
 }
