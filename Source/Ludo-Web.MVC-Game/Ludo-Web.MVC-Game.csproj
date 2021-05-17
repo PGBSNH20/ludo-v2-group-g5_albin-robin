@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Ludo-Web.MVC-Platform\Ludo-Web.MVC-Platform.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models" />
+  </ItemGroup>
+
 </Project>
