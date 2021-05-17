@@ -24,7 +24,7 @@ namespace LudoOnlinePlatformTests
             var player1 = new Account()
             {
                 EmailAdress = "ace@ventura.com",
-                Language = ModelEnum.Language.en_US,
+                Language = ModelEnum.Language.EnUs,
                 PlayerName = "Ace_Mighty",
                 Password = "animalDicks",
             };

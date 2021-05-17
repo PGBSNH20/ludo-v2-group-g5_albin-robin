@@ -7,7 +7,7 @@ namespace Ludo_Web.MVC_Game.DataAccess.LudoORM
 {
     public class StephanLog : ILog
     {
-        private StreamWriter Logger;
+        private StreamWriter _logger;
         public StephanLog(ModelEnum.TeamColor color)
         {
             int number = 0;
@@ -19,13 +19,13 @@ namespace Ludo_Web.MVC_Game.DataAccess.LudoORM
                     number++;
                 }
             }
-            Logger = new StreamWriter($@"{Environment.CurrentDirectory}\StephanLogs\stephan_{color.ToString()}{number.ToString()}.log");
+            _logger = new StreamWriter($@"{Environment.CurrentDirectory}\StephanLogs\stephan_{color.ToString()}{number.ToString()}.log");
         }
         public void Log(string input)
         {
-            Logger.Write(input);
-            Logger.WriteLine("");
-            Logger.Flush();
+            _logger.Write(input);
+            _logger.WriteLine("");
+            _logger.Flush();
         }
     }
 }

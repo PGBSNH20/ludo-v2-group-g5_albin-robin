@@ -14,7 +14,7 @@ namespace LudoOnlineGameTests.AI
         [Fact]
         public void Stephan_Choices_AssertErradicate()
         {
-            BoardFinder.Init(@"AI/ai-test-map1.txt");
+            SquareCollection.Init(@"AI/ai-test-map1.txt");
 
             var stephan = new Stephan(TeamColor.Blue, null);
             var dice = new RiggedDice(new[] { 2 });
@@ -22,16 +22,16 @@ namespace LudoOnlineGameTests.AI
             var pawn1 = new Pawn(TeamColor.Blue);
             var pawn2 = new Pawn(TeamColor.Blue);
             var enemyPawn = new Pawn(TeamColor.Green);
-            var squarePawn1 = BoardFinder.BoardSquares.Find(x => x.BoardX == 0 && x.BoardY == 1);
-            var squarePawn2 = BoardFinder.BoardSquares.Find(x => x.BoardX == 1 && x.BoardY == 1);
-            var squareEnemy = BoardFinder.BoardSquares.Find(x => x.BoardX == 2 && x.BoardY == 1);
-            var enemyBase = BoardFinder.BaseSquare(TeamColor.Green);
+            var squarePawn1 = SquareCollection.BoardSquares.Find(x => x.BoardX == 0 && x.BoardY == 1);
+            var squarePawn2 = SquareCollection.BoardSquares.Find(x => x.BoardX == 1 && x.BoardY == 1);
+            var squareEnemy = SquareCollection.BoardSquares.Find(x => x.BoardX == 2 && x.BoardY == 1);
+            var enemyBase = SquareCollection.BaseSquare(TeamColor.Green);
 
             squarePawn1.Pawns.Add(pawn1);
             squarePawn2.Pawns.Add(pawn2);
             squareEnemy.Pawns.Add(enemyPawn);
 
-            stephan.Play(dice);
+            stephan.ChoosePlay(TODO);
 
             Assert.True(squarePawn1.Pawns.Count == 0);
 
@@ -39,14 +39,14 @@ namespace LudoOnlineGameTests.AI
         [Fact]
         public void StephanRollSix_AssertTakeOutTwo()
         {
-            BoardFinder.Init(@"AI/ai-test-map1.txt");
-            var squares = BoardFinder.BoardSquares;
+            SquareCollection.Init(@"AI/ai-test-map1.txt");
+            var squares = SquareCollection.BoardSquares;
             GameSetup.NewGame(squares, new TeamColor[] { TeamColor.Blue });
             var dice = new RiggedDice(new[] { 6, 1 });
 
             var stephan = new Stephan(TeamColor.Blue, null);
-            stephan.Play(dice);
-            var startSquare = BoardFinder.StartSquare(TeamColor.Blue);
+            stephan.ChoosePlay(TODO);
+            var startSquare = SquareCollection.StartSquare(TeamColor.Blue);
             var pawns = startSquare.Pawns;
             Assert.True(pawns.Count == 2);
         }

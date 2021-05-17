@@ -6,8 +6,8 @@
     {
         public enum Language
         {
-            en_US,
-            sv_SE
+            EnUs,
+            SvSe
         }
     }
 }

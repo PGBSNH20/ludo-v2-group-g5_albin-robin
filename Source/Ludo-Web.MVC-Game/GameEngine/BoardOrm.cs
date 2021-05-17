@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Ludo_Web.MVC_Game.GameEngine;
 using Ludo_Web.MVC_Game.GameEngine.GameSquares;
+using Ludo_Web.MVC_Game.GameEngine.Interfaces;
 using Ludo_Web.MVC_Game.Models;
 
-namespace Ludo_Web.MVC_Game.DataAccess.LudoORM
+namespace Ludo_Web.MVC_Game.GameEngine
 {
-    public static class BoardOrm
+    public class BoardOrm : IBoardOrm
     {
-        public static List<GameSquare> Map(string filePath)
+        private const string _filePath = @"LudoORM/Map/BoardMap.txt";
+        public List<GameSquare> Map()
         {
             var squares = new List<GameSquare>();
-            var charCoords = ReadCharCoords(filePath);
+            var charCoords = ReadCharCoords(_filePath);
 
             foreach (var charCoord in charCoords)
             {
@@ -53,7 +54,7 @@ namespace Ludo_Web.MVC_Game.DataAccess.LudoORM
 
             return squares;
         }
-        private static List<(char chr, int X, int Y)> ReadCharCoords(string filePath)
+        private List<(char chr, int X, int Y)> ReadCharCoords(string filePath)
         {
 
             var charCoord = new List<(char chr, int X, int Y)>();

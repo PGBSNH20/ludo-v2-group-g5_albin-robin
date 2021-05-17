@@ -13,12 +13,12 @@ namespace Ludo_Web.MVC_Game.GameEngine.GameSquares
             Color = null;
             Pawns = new List<Pawn>();
         }
-        public override ModelEnum.BoardDirection DirectionNext(ModelEnum.TeamColor Color)
+        public override ModelEnum.BoardDirection DirectionNext(ModelEnum.TeamColor color)
         {
             return
-               Color == ModelEnum.TeamColor.Yellow ? ModelEnum.BoardDirection.Up :
-               Color == ModelEnum.TeamColor.Blue ? ModelEnum.BoardDirection.Right :
-               Color == ModelEnum.TeamColor.Red ? ModelEnum.BoardDirection.Down : ModelEnum.BoardDirection.Left;
+               color == ModelEnum.TeamColor.Yellow ? ModelEnum.BoardDirection.Up :
+               color == ModelEnum.TeamColor.Blue ? ModelEnum.BoardDirection.Right :
+               color == ModelEnum.TeamColor.Red ? ModelEnum.BoardDirection.Down : ModelEnum.BoardDirection.Left;
         }
     }
 }

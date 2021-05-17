@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Ludo_Web.MVC_Game.GameEngine;
+using Ludo_Web.MVC_Game.GameEngine.Interfaces;
 
 namespace Ludo_Web.MVC_Game.Models
 {
-    public record Player
+    public abstract record Player : IGamePlayer
     {
-        public int AccountId { get; set; }
-        public ICollection<Pawn> Pawns { get; set; }
-        public int Result { get; set; }
+        public int PlayerId { get; set; }
         public bool CanThrow { get; set; }
+        public int Result { get; set; }
+
+        public ModelEnum.TeamColor Color { get; set; }
+        public abstract Pawn[] ChoosePlay(PlayerOption playerOption);
     }
 }

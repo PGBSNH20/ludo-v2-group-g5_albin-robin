@@ -17,7 +17,7 @@ namespace LudoOnlineGameTests.board_pawn
             throw new System.NotImplementedException();
         }
 
-        public void UpdateDiceRoll(GamePlayer player, int result)
+        public void UpdateDiceRoll(Player player, int result)
         {
             throw new System.NotImplementedException();
         }
@@ -57,7 +57,7 @@ namespace LudoOnlineGameTests.board_pawn
                 .LoadGame()
                 .LoadPawns(new List<PawnSavePoint> { savePoint });
 
-            var pawns = BoardFinder.GetTeamPawns(TeamColor.Blue);
+            var pawns = SquareCollection.GetTeamPawns(TeamColor.Blue);
             Assert.True(pawns.Count == 1);
         }
         [Fact]
@@ -82,7 +82,7 @@ namespace LudoOnlineGameTests.board_pawn
                 .LoadGame()
                 .LoadPawns(new List<PawnSavePoint> { savePoint, savePoint2 });
 
-            var square = BoardFinder.BoardSquares.Find(x => x.BoardX == savePoint.XPosition && x.BoardY == savePoint.YPosition);
+            var square = SquareCollection.BoardSquares.Find(x => x.BoardX == savePoint.XPosition && x.BoardY == savePoint.YPosition);
 
             Assert.True(square.Pawns.Count == 2);
         }
