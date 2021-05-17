@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using Ludo_Web.MVC_Game.GameEngine.GameSquares;
+using Ludo_Web.MVC_Game.GameEngine.Interfaces;
 using static Ludo_Web.MVC_Game.Models.ModelEnum;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {
-    public class GameAction
+    public class GameAction : IGameAction
     {
         private readonly IBoardCollection _boardCollection;
 
@@ -14,22 +15,23 @@ namespace Ludo_Web.MVC_Game.GameEngine
         {
             _boardCollection = collection;
         }
-        public static event Action<Pawn, int> OnMoveEvent;
-        public static event Action<TeamColor> OnTakeOutTwoEvent;
+        public event Action<TeamColor, int> OnMoveEvent;
+        public event Action<TeamColor> OnTakeOutTwoEvent;
 
-        public static event Action<Pawn> OnBounceEvent;
-        public static event Action<Pawn, int> OnGoalEvent;
-        public static event Action<Pawn> OnAllTeamPawnsOutEvent;
-        public static event Action<Pawn, TeamColor, int> OnEradicationEvent;
-        public static event Action<TeamColor> GameLoserEvent;
-        public static event Action GameOverEvent;
-        public static event Action<Pawn> OnSafeZoneEvent;
+        public event Action<Pawn> OnBounceEvent;
+        public event Action<Pawn, int> OnGoalEvent;
+        public event Action<Pawn> OnAllTeamPawnsOutEvent;
+        public event Action<Pawn, TeamColor, int> OnEradicationEvent;
+        public event Action<TeamColor> GameLoserEvent;
+        public event Action GameOverEvent;
+        public event Action<Pawn> OnSafeZoneEvent;
 
         public void Act(Pawn[] pawns, int diceRoll)
         {
             if (pawns.Length == 0) return;
             if (pawns.Length == 2)
             {
+                OnTakeOutTwoEvent?.Invoke(pawns[0].Color);
                 foreach (var p in pawns)
                 {
                     Move(p, 1);
@@ -38,6 +40,7 @@ namespace Ludo_Web.MVC_Game.GameEngine
             }
             if (pawns.Length == 1)
             {
+                OnMoveEvent?.Invoke(pawns[0].Color, diceRoll);
                 Move(pawns[0], diceRoll);
             }
             throw new Exception("Invalid pawn count");

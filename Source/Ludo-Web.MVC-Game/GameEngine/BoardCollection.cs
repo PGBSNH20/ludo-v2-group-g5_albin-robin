@@ -7,26 +7,6 @@ using Ludo_Web.MVC_Game.Models;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {
-    public interface IBoardCollection
-    {
-        public void SetAllPawn(List<Pawn> pawns);
-        public List<ModelEnum.TeamColor> TeamsLeft();
-        List<Pawn> EnemiesOnSquare(GameSquare targetSquare, ModelEnum.TeamColor color);
-        List<Pawn> PawnsInBase(ModelEnum.TeamColor color);
-        public List<Pawn> GetFreeTeamPawns(ModelEnum.TeamColor color);
-        GameSquare CurrentSquare(Pawn pawn);
-        public GameSquare PastSquare(GameSquare square, ModelEnum.TeamColor color);
-        public List<Pawn> GetTeamPawns(ModelEnum.TeamColor color);
-        List<GameSquare> EnemySquares(ModelEnum.TeamColor color);
-        GameSquare GoalSquare();
-        List<GameSquare> SafeZoneSquares(ModelEnum.TeamColor color);
-        GameSquare StartSquare(ModelEnum.TeamColor color);
-        GameSquare BaseSquare(ModelEnum.TeamColor color);
-        List<GameSquare> TeamPath(ModelEnum.TeamColor color);
-        GameSquare GetNext(GameSquare square, ModelEnum.TeamColor color);
-        GameSquare GetBack(GameSquare square, ModelEnum.TeamColor color);
-    }
-
     public class BoardCollection : IBoardCollection
     {
         private List<GameSquare> _boardSquares { get; }
@@ -45,7 +25,28 @@ namespace Ludo_Web.MVC_Game.GameEngine
         }
         public List<ModelEnum.TeamColor> TeamsLeft() => _allPawn.Select(p => p.Color).ToList();
         public List<Pawn> GetTeamPawns(ModelEnum.TeamColor color) => _allPawn.FindAll(p => p.Color == color);
+        public Pawn FurthestPawn(ModelEnum.TeamColor color)
+        {
+            var path = TeamPath(color);
+            var teamPawns = GetFreeTeamPawns(color);
+            Pawn furthestPawn = null;
+            foreach (var square in path)
+            {
+                var pawn = teamPawns.FirstOrDefault(p => square == CurrentSquare(p));
+                if (pawn != null) furthestPawn = pawn;
+            }
+            return furthestPawn;
+        }
+        public bool IsOccupiedByTeam(ModelEnum.TeamColor color, GameSquare square)
+        {
+            var pawns = PawnsOnSquare(square);
+            if (pawns.Count == 0) return false;
+            if (pawns[0].Color == color) return true;
+            return false;
+        }
+
         public List<Pawn> PawnsInBase(ModelEnum.TeamColor color) => _allPawn.FindAll(p => CurrentSquare(p) == BaseSquare(color));
+        public List<Pawn> PawnsOnSquare(GameSquare square) => _allPawn.FindAll(p => CurrentSquare(p) == square);
         public List<Pawn> GetFreeTeamPawns(ModelEnum.TeamColor color) =>
             GetTeamPawns(color).FindAll(p => CurrentSquare(p).GetType() != typeof(BaseSquare));
         public GameSquare PastSquare(GameSquare square, ModelEnum.TeamColor color)
@@ -60,13 +61,10 @@ namespace Ludo_Web.MVC_Game.GameEngine
         {
             return _allPawn.FindAll(p => p.X == targetSquare.BoardX && p.Y == targetSquare.BoardY && p.Color != color);
         }
-
-
         public GameSquare CurrentSquare(Pawn pawn)
         {
             return _boardSquares.Find(x => x.BoardX == pawn.X && x.BoardY == pawn.Y);
         }
-
         public List<GameSquare> EnemySquares(ModelEnum.TeamColor color)
         {
             var enemyPawns = _allPawn.FindAll(s => s.Color != color);
@@ -81,22 +79,18 @@ namespace Ludo_Web.MVC_Game.GameEngine
         {
             return _boardSquares.Find(x => x.GetType() == typeof(GoalSquare));
         }
-
         public List<GameSquare> SafeZoneSquares(ModelEnum.TeamColor color)
         {
             return _boardSquares.FindAll(s => s.GetType() == typeof(SafezoneSquare) && s.Color == color);
         }
-
         public GameSquare StartSquare(ModelEnum.TeamColor color)
         {
             return _boardSquares.Find(x => x.GetType() == typeof(StartSquare) && x.Color == color);
         }
-
         public GameSquare BaseSquare(ModelEnum.TeamColor color)
         {
             return _boardSquares.Find(x => x.GetType() == typeof(BaseSquare) && x.Color == color);
         }
-
         public List<GameSquare> TeamPath(ModelEnum.TeamColor color)
         {
             var teamSquares = new List<GameSquare>();
@@ -117,7 +111,6 @@ namespace Ludo_Web.MVC_Game.GameEngine
                 direction == ModelEnum.BoardDirection.Down ? (0, 1) :
                 direction == ModelEnum.BoardDirection.Left ? (-1, 0) : (0, 0);
         }
-
         public GameSquare GetNext(GameSquare square, ModelEnum.TeamColor color)
         {
             var diff = NextDiff(square.DirectionNext(color));

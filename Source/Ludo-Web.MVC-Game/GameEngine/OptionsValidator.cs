@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Ludo_Web.MVC_Game.GameEngine.Interfaces;
 using Ludo_Web.MVC_Game.Models;
 
 namespace Ludo_Web.MVC_Game.GameEngine
 {
-    public class OptionsValidator
+    public class OptionsValidator : IOptionsValidator
     {
         private readonly IBoardCollection _boardCollection;
         private readonly IEqualityComparer<Pawn> _pawnComparer;
