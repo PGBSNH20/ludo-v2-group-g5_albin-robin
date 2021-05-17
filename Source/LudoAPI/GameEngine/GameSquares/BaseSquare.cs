@@ -11,7 +11,6 @@ namespace Ludo_Web.MVC_Game.GameEngine.GameSquares
             BoardY = boardY;
             DefaultDirection = direction;
             Color = color;
-            Pawns = new List<Pawn>();
         }
     }
 }

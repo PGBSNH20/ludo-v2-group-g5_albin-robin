@@ -11,7 +11,6 @@ namespace Ludo_Web.MVC_Game.GameEngine.GameSquares
             BoardY = boardY;
             DefaultDirection = 0;
             Color = null;
-            Pawns = new List<Pawn>();
         }
         public override ModelEnum.BoardDirection DirectionNext(ModelEnum.TeamColor color)
         {

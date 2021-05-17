@@ -3,15 +3,14 @@ using Ludo_Web.MVC_Game.Models;
 
 namespace Ludo_Web.MVC_Game.GameEngine.GameSquares
 {
-    public class StandardSquare : GameSquare
+    public class StartSquare : GameSquare
     {
-        public StandardSquare(int boardX, int boardY, ModelEnum.BoardDirection direction)
+        public StartSquare(int boardX, int boardY, ModelEnum.TeamColor? color, ModelEnum.BoardDirection direction)
         {
             BoardX = boardX;
             BoardY = boardY;
             DefaultDirection = direction;
-            Color = null;
-            Pawns = new List<Pawn>();
+            Color = color;
         }
     }
 }
