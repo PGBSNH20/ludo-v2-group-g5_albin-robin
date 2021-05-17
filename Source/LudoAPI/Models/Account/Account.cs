@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using LudoAPI.DataAccess;
+using LudoAPI.Translation;
 
 namespace LudoAPI.Models.Account
 {
@@ -13,6 +14,6 @@ namespace LudoAPI.Models.Account
         [Required]
         public string Password { get; set; }
         [Required]
-        public ModelEnum.Language Language { get; set; }
+        public TranslationEngine.Language Language { get; set; }
     }
 }

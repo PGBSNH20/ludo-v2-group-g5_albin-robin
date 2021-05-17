@@ -8,7 +8,7 @@ namespace LudoAPI.DataAccess
     {
         private readonly LudoContext _db;
         public DbRepository(LudoContext db) => _db = db;
-        public IQueryable<Player> Players => _db.Players;
+        public IQueryable<Account> Accounts => _db.Accounts;
         public IQueryable<Game> Games => _db.Games;
         public IQueryable<AccountToken> AccountTokens => _db.AccountTokens;
         public void Add<TEntityType>(TEntityType entity) => _db.Add(entity);

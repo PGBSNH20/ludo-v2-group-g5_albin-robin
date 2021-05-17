@@ -35,10 +35,6 @@
             Exception,
             Ended
         }
-        public enum Language
-        {
-            en_US,
-            sv_SE
-        }
+    
     }
 }

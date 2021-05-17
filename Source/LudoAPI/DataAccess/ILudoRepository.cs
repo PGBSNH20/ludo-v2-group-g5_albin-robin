@@ -6,7 +6,7 @@ namespace LudoAPI.DataAccess
 {
     public interface ILudoRepository
     {
-        IQueryable<Player> Players { get; }
+        IQueryable<Account> Accounts { get; }
         IQueryable<Game> Games { get; }
         IQueryable<AccountToken> AccountTokens { get; }
         void Add<TEntityType>(TEntityType entity);
