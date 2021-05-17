@@ -1,0 +1,24 @@
+﻿Game;
+Contains information:
+*Game ID
+*Players
+*Current placements
+*Spawn locations
+*What pawns are based
+*Archived(is game active) - Bool
+Summary:
+Contains active game information and is being used to transfer data between players.
+
+Pawn
+Contains information:
+*Color
+*LocationX
+*LocationY
+
+Summary:
+Contains elements regarding the pawn. More parameters will be added to fulfill certain checks.
+
+Possibilities:
+Currently only dependent on a single table.
+To increase readability chick for possibility to split into different tables.
+Caution; Keep data integrity.

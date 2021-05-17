@@ -1,0 +1,27 @@
+﻿Account
+Contains information about player
+Example: 
+AccountName, Password(Hashed), Wins, Losses, 
+
+
+PlayerQueue
+Contains information about accounts currently on queue for a game.
+Example:
+AccountID, WinRatio, QueueStartTime
+* When 4 players with equal win ratio are in queue it will combine them into a new game and removing them
+  from the queue table.
+  Priority are based on QueueStartTime
+
+
+GameLobby
+Contains information about a game currently being created as part of a custom game
+Example
+GameID, AccountID, IsAI, Color
+
+* When the game is started, 
+  the row will be truncated from this table and an active game is created in the Game database instead
+
+
+
+General notes:
+Research additional tables.
