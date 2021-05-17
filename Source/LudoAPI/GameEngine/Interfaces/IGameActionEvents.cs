@@ -1,7 +1,8 @@
 ﻿using System;
-using Ludo_Web.MVC_Game.Models;
+using LudoAPI.Models;
+using ModelEnum = LudoAPI.DataAccess.ModelEnum;
 
-namespace Ludo_Web.MVC_Game.GameEngine.Interfaces
+namespace LudoAPI.GameEngine.Interfaces
 {
     public interface IGameActionEvents
     {

@@ -1,6 +1,6 @@
-﻿using Ludo_Web.MVC_Game.Models;
+﻿using LudoAPI.Models;
 
-namespace Ludo_Web.MVC_Game.GameEngine
+namespace LudoAPI.GameEngine
 {
     public class PlayerOption
     {

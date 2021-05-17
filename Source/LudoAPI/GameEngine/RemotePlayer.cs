@@ -1,7 +1,7 @@
-﻿using Ludo_Web.MVC_Game.GameEngine.Interfaces;
-using Ludo_Web.MVC_Game.Models;
+﻿using LudoAPI.GameEngine.Interfaces;
+using LudoAPI.Models;
 
-namespace Ludo_Web.MVC_Game.GameEngine
+namespace LudoAPI.GameEngine
 {
     public record RemotePlayer : Player, IGamePlayer
     {

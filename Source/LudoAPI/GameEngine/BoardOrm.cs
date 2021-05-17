@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Ludo_Web.MVC_Game.GameEngine.GameSquares;
-using Ludo_Web.MVC_Game.GameEngine.Interfaces;
-using Ludo_Web.MVC_Game.Models;
+using LudoAPI.DataAccess;
+using LudoAPI.GameEngine.GameSquares;
+using LudoAPI.GameEngine.Interfaces;
 
-namespace Ludo_Web.MVC_Game.GameEngine
+namespace LudoAPI.GameEngine
 {
     public class BoardOrm : IBoardOrm
     {

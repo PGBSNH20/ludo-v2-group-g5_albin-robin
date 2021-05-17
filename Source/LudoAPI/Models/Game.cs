@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using LudoAPI.DataAccess;
 
-namespace Ludo_Web.MVC_Game.Models
+namespace LudoAPI.Models
 {
     public record Game
     {

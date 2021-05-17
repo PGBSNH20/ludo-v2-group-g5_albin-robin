@@ -2,9 +2,9 @@
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
-using LudoTranslation;
+using LudoAPI.Translation;
 
-namespace Ludo_Web.MVC_Platform.SMTP
+namespace LudoAPI.SMTP
 {
     public static class EmailClient
     {

@@ -1,4 +1,6 @@
-﻿namespace Ludo_Web.MVC_Game.Models
+﻿using LudoAPI.DataAccess;
+
+namespace LudoAPI.Models
 {
     public class Pawn
     {

@@ -1,4 +1,4 @@
-﻿namespace SpacePark_API.Authentication
+﻿namespace LudoAPI.Authentication
 {
     public static class Role
     {

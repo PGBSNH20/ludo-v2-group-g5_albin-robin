@@ -25,9 +25,11 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Models" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LudoAPI\LudoAPI.csproj" />
     <ProjectReference Include="..\LudoTranslation\LudoTranslation.csproj" />
   </ItemGroup>
 

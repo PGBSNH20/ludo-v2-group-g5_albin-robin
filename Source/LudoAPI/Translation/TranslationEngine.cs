@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace LudoTranslation
+namespace LudoAPI.Translation
 {
     public static class TranslationEngine
     {
@@ -17,7 +18,7 @@ namespace LudoTranslation
         public static void InitializeLanguage(string lang)
         {
             var line = "";
-            var reader = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + "/Translations/" + lang + ".lang");
+            var reader = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + "/Translation/Translations/" + lang + ".lang");
             while ((line = reader.ReadLine()) != null && !string.IsNullOrWhiteSpace(line) && line.Contains("=="))
             {
                 var lineSplit = line.Split("==");
@@ -26,5 +27,23 @@ namespace LudoTranslation
                     prop.SetValue(null, Dictionary.SingleOrDefault(k => k.Key == prop.Name).Value);
             }
         }
+
+        public enum Language
+        {
+            en_US,
+            sv_SE
+        }
+
+        public static Language ParseEnum(string language)
+        {
+            var success = Enum.TryParse(language, true, out Language lang);
+            return success ? lang : Language.en_US;
+        }
+        public static bool EnumExists(string language)
+        {
+            var success = Enum.TryParse(language, true, out Language lang);
+            return success;
+        }
+
     }
 }

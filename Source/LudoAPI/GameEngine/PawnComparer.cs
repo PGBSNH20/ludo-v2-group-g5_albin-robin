@@ -1,9 +1,9 @@
-﻿using Ludo_Web.MVC_Game.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using LudoAPI.Models;
 
-namespace Ludo_Web.MVC_Game.GameEngine
+namespace LudoAPI.GameEngine
 {
     public class PawnComparer : IEqualityComparer<Pawn>
     {

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
-using Ludo_Web.MVC_Platform.DataAccess;
+using LudoAPI.DataAccess;
 
 namespace Ludo_Web.MVC_Platform
 {
@@ -25,11 +25,11 @@ namespace Ludo_Web.MVC_Platform
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<ILudoPlatformRepository, DbPlatformRepository>();
+            services.AddTransient<ILudoRepository, DbRepository>();
             //if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt"))
             //    services.AddDbContext<LudoContext>(options => options.UseSqlServer(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\connection.txt")));
             //else
-            services.AddDbContext<LudoPlatformContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+            services.AddDbContext<LudoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
 
             services.AddAuthentication(options =>
             {

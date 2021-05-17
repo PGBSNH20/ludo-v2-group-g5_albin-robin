@@ -1,9 +1,8 @@
 using Xunit;
 using System.Net.Http;
 using Ludo_Web.MVC_Platform;
-using Ludo_Web.MVC_Platform.DataAccess;
-using Ludo_Web.MVC_Platform.Models;
-using Ludo_Web.MVC_Platform.Models.Account;
+using LudoAPI.DataAccess;
+using LudoAPI.Models.Account;
 
 namespace LudoOnlinePlatformTests
 {

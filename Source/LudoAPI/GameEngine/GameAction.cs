@@ -1,11 +1,11 @@
-﻿using Ludo_Web.MVC_Game.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Ludo_Web.MVC_Game.GameEngine.GameSquares;
-using Ludo_Web.MVC_Game.GameEngine.Interfaces;
-using static Ludo_Web.MVC_Game.Models.ModelEnum;
+using LudoAPI.GameEngine.GameSquares;
+using LudoAPI.GameEngine.Interfaces;
+using LudoAPI.Models;
+using ModelEnum = LudoAPI.DataAccess.ModelEnum;
 
-namespace Ludo_Web.MVC_Game.GameEngine
+namespace LudoAPI.GameEngine
 {
     public class GameAction : IGameAction
     {
@@ -15,14 +15,14 @@ namespace Ludo_Web.MVC_Game.GameEngine
         {
             _boardCollection = collection;
         }
-        public event Action<TeamColor, int> OnMoveEvent;
-        public event Action<TeamColor> OnTakeOutTwoEvent;
+        public event Action<DataAccess.ModelEnum.TeamColor, int> OnMoveEvent;
+        public event Action<DataAccess.ModelEnum.TeamColor> OnTakeOutTwoEvent;
 
         public event Action<Pawn> OnBounceEvent;
         public event Action<Pawn, int> OnGoalEvent;
         public event Action<Pawn> OnAllTeamPawnsOutEvent;
-        public event Action<Pawn, TeamColor, int> OnEradicationEvent;
-        public event Action<TeamColor> GameLoserEvent;
+        public event Action<Pawn, ModelEnum.TeamColor, int> OnEradicationEvent;
+        public event Action<ModelEnum.TeamColor> GameLoserEvent;
         public event Action GameOverEvent;
         public event Action<Pawn> OnSafeZoneEvent;
 
@@ -84,18 +84,18 @@ namespace Ludo_Web.MVC_Game.GameEngine
                 }
             }
 
-            TeamColor? enemyColor = null;
+            DataAccess.ModelEnum.TeamColor? enemyColor = null;
             int pawnsToEradicate = 0;
             var enemies = _boardCollection.EnemiesOnSquare(tempSquare, pawn.Color);
             if (enemies.Count > 0)
             {
                 enemyColor = enemies[0].Color;
                 pawnsToEradicate = enemies.Count;
-                var eradicateBase = _boardCollection.BaseSquare((TeamColor)enemyColor);
+                var eradicateBase = _boardCollection.BaseSquare((ModelEnum.TeamColor)enemyColor);
                 ChangeCoordinates(enemies, eradicateBase);
             }
 
-            if (pawnsToEradicate != 0) OnEradicationEvent?.Invoke(pawn, (TeamColor)enemyColor, pawnsToEradicate);
+            if (pawnsToEradicate != 0) OnEradicationEvent?.Invoke(pawn, (ModelEnum.TeamColor)enemyColor, pawnsToEradicate);
             ChangeCoordinates(pawn, tempSquare);
 
             if (bounced == true) OnBounceEvent?.Invoke(pawn);

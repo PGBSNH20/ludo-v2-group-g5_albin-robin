@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using Ludo_Web.MVC_Game.GameEngine.GameSquares;
-using Ludo_Web.MVC_Game.Models;
+using LudoAPI.GameEngine.GameSquares;
+using LudoAPI.Models;
+using ModelEnum = LudoAPI.DataAccess.ModelEnum;
 
-namespace Ludo_Web.MVC_Game.GameEngine.Interfaces
+namespace LudoAPI.GameEngine.Interfaces
 {
     public interface IBoardCollection
     {

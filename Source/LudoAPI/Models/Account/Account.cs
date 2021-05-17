@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using LudoAPI.Translation;
 
-namespace Ludo_Web.MVC_Platform.Models.Account
+namespace LudoAPI.Models.Account
 {
     public record Account
     {
@@ -12,6 +13,6 @@ namespace Ludo_Web.MVC_Platform.Models.Account
         [Required]
         public string Password { get; set; }
         [Required]
-        public ModelEnum.Language Language { get; set; }
+        public TranslationEngine.Language Language { get; set; }
     }
 }

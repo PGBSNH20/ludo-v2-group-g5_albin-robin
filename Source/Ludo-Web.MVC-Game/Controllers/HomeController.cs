@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using Ludo_Web.MVC_Game.Models.Errors;
+using Ludo_Web.MVC_Platform.Models.Error;
+using ErrorViewModel = Ludo_Web.MVC_Game.Models.Error.ErrorViewModel;
 
 namespace Ludo_Web.MVC_Game.Controllers
 {

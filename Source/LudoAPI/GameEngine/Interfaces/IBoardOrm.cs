@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Ludo_Web.MVC_Game.GameEngine.GameSquares;
+using LudoAPI.GameEngine.GameSquares;
 
-namespace Ludo_Web.MVC_Game.GameEngine.Interfaces
+namespace LudoAPI.GameEngine.Interfaces
 {
     public interface IBoardOrm
     {

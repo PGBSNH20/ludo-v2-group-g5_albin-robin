@@ -2,7 +2,7 @@
 
 // ReSharper disable UnusedAutoPropertyAccessor.Local
 // ReSharper disable InconsistentNaming
-namespace LudoTranslation {
+namespace LudoAPI.Translation {
     //Data model for keeping translation strings
     public static class Dict
     {

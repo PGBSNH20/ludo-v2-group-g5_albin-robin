@@ -1,20 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SpacePark_API.Authentication
+namespace LudoAPI.Authentication
 {
     public class RegisterModel
     {
-        [Required(ErrorMessage = "Name is required")]
-        public string Name { get; set; }
-
         [Required(ErrorMessage = "Account name is required")]
         public string AccountName { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
         
-        [Required(ErrorMessage = "Spaceship is required")]
-        public string SpaceShipModel { get; set; }
-
+        [Required(ErrorMessage = "Email is required")]
+        public string Email { get; set; }
+        
+        [Required(ErrorMessage = "Preferred language is required")]
+        public string PreferredLanguage { get; set; }
     }
 }

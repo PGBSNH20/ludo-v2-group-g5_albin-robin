@@ -1,6 +1,6 @@
-﻿using Ludo_Web.MVC_Game.Models;
+﻿using LudoAPI.Models;
 
-namespace Ludo_Web.MVC_Game.GameEngine.Frontend
+namespace LudoAPI.GameEngine.Frontend
 {
     public interface IInfoDisplay
     {

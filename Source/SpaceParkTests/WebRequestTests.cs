@@ -9,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using SpacePark_API;
 using System.Text;
-using SpacePark_API.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System;
