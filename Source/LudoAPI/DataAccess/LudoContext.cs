@@ -1,11 +1,14 @@
+using LudoAPI.Models;
 using LudoAPI.Models.Account;
 using Microsoft.EntityFrameworkCore;
 
 namespace LudoAPI.DataAccess
 {
-    public class LudoPlatformContext : DbContext
+    public class LudoContext : DbContext
     {
-        public LudoPlatformContext(DbContextOptions<LudoPlatformContext> options) : base(options) { }
+        public LudoContext(DbContextOptions<LudoContext> options) : base(options) { }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Game> Games { get; set; }
         public DbSet<AccountToken> AccountTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

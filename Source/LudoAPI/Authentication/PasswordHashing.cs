@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SpacePark_API.Authentication
+namespace LudoAPI.Authentication
 {
     public static class PasswordHashing
     {

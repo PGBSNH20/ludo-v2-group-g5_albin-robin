@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SpacePark_API.Authentication
+namespace LudoAPI.Authentication
 {
     public class LoginModel
     {

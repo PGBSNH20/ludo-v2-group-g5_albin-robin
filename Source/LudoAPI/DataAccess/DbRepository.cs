@@ -1,12 +1,15 @@
 ﻿using System.Linq;
+using LudoAPI.Models;
 using LudoAPI.Models.Account;
 
 namespace LudoAPI.DataAccess
 {
-    public class DbPlatformRepository : ILudoPlatformRepository
+    public class DbRepository : ILudoRepository
     {
-        private readonly LudoPlatformContext _db;
-        public DbPlatformRepository(LudoPlatformContext db) => _db = db;
+        private readonly LudoContext _db;
+        public DbRepository(LudoContext db) => _db = db;
+        public IQueryable<Player> Players => _db.Players;
+        public IQueryable<Game> Games => _db.Games;
         public IQueryable<AccountToken> AccountTokens => _db.AccountTokens;
         public void Add<TEntityType>(TEntityType entity) => _db.Add(entity);
         public void Remove<TEntityType>(TEntityType entity) => _db.Remove(entity);

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace SpacePark_API.Authentication
+namespace LudoAPI.Authentication
 {
     public class AuthorizeRolesAttribute : AuthorizeAttribute
     {
