@@ -32,4 +32,8 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Networking\Interfaces\" />
+    </ItemGroup>
+
 </Project>

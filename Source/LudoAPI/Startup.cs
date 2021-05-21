@@ -1,9 +1,11 @@
 using System.Text;
 using LudoAPI.DataAccess;
+using LudoAPI.Networking;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,6 +54,17 @@ namespace LudoAPI
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                     };
                 });
+
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            {
+                builder
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowAnyOrigin()
+                    .AllowCredentials()
+                    .WithOrigins("http://localhost:4200");
+            }));
+            services.AddSignalR();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "LudoAPI", Version = "v1"}); });
         }
 
@@ -65,13 +78,18 @@ namespace LudoAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LudoAPI v1"));
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
           
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers(); 
+                endpoints.MapHub<UpdateHub>("/gamenotify");
+            });
         }
     }
 }

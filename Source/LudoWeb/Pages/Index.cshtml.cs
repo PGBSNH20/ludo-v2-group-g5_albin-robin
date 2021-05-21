@@ -11,7 +11,7 @@ namespace LudoWeb.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
+        public string Test = "test";
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
