@@ -54,7 +54,7 @@ namespace LudoWeb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<LobbyMessageHub>("/LobbyMessageHub");
             });
         }
     }
