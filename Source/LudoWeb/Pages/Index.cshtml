@@ -1,30 +1,54 @@
 ﻿@page
-<div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
+@model LudoWeb.Pages.LudoGame
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<div id="divPreviewImage"> <!-- To display the browsed image-->
+    <fieldset>
+        <div class="form-group"> 
+            <div class="col-lg-2">
+                <image src="" id="previewImage" 
+                       style="height:100px;width:100px;border:solid 2px dotted; float:left" />
+            </div>
+            <div class="col-lg-10" id="divOpponentPlayer"> <!-- 
+                To display image of opponent player-->
+                <image src="" id="opponentImage" 
+                       style="height:100px;width:100px;border:solid 2px dotted; float:right;" />
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script> <!-- jQuery-->
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/LudoGame.js"></script>
+<div id="divRegister"> <!-- Our Registration form-->
+<fieldset>
+<legend>Register</legend>
+<div class="form-group">
+    <label for="name" class="col-lg-2 control-
+label">Name</label>
+    <div class="col-lg-10">
+        <input type="text" class="form-control" id="name" 
+               placeholder="Name">
     </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
+</div>
+    <div class="form-group">
+        <label for="image" class="col-lg-2 control-
+label">Avatar</label>
+        <div class="col-lg-10">
+            <input type="file" class="form-control" id="image" 
+            />
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <hr />
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button type="button" class="btn btn-primary" 
+                    id="btnRegister">Register</button>
+        </div>
     </div>
+</fieldset>
 </div>
-<div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
-    </div>
-</div>
-<script src="~/js/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/LobbyMessageClient.js"></script>
